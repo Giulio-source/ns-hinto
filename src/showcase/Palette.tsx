@@ -1,7 +1,7 @@
 import { Colors } from "../commons/Theme";
 import { Section } from "./Section/Section";
 
-export const Palette = () => {
+export const ShowcasePalette = () => {
   return (
     <Section title="Palette">
       <div

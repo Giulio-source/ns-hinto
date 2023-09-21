@@ -13,11 +13,15 @@ export const StyledSection = styled.div<{ background?: string }>`
   @media screen and (min-width: ${DesktopBR}) {
     padding-left: 32px;
     padding-right: 32px;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 `;
 
 export const StyledSectionTitle = styled.h1`
   margin-bottom: 24px;
+  color: ${({ color }) => color};
 `;
 
 export const StyledSectionContent = styled.div`

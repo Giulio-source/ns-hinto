@@ -8,7 +8,6 @@ const StyledIcon = styled.div<StyledIconProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s;
   &:hover {
     stroke: ${({ hoverStroke }) => hoverStroke};
     fill: ${({ hoverFill }) => hoverFill};
@@ -52,5 +51,5 @@ type StyledIconProps = {
 };
 
 type IconProps = StyledIconProps & {
-  Icon: React.FunctionComponent;
+  Icon: React.FC;
 };

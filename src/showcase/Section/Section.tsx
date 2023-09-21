@@ -1,4 +1,4 @@
-import { Grid } from "../../commons/Theme";
+import { Colors, Grid } from "../../commons/Theme";
 import {
   StyledSection,
   StyledSectionContent,
@@ -8,17 +8,21 @@ import {
 export const Section = ({
   title,
   background,
+  color = Colors.neutral900,
   children,
 }: {
   title: string;
   background?: string;
+  color?: string;
   children: React.ReactNode;
 }) => {
   return (
     <StyledSection background={background}>
       <Grid>
         <StyledSectionContent>
-          <StyledSectionTitle>Showcase: {title}</StyledSectionTitle>
+          <StyledSectionTitle color={color}>
+            Showcase: {title}
+          </StyledSectionTitle>
           {children}
         </StyledSectionContent>
       </Grid>
