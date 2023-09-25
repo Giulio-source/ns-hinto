@@ -15,8 +15,8 @@ export const ShowcasePalette = () => {
           <div
             key={key}
             style={{
-              width: "120px",
-              height: "120px",
+              width: "128px",
+              height: "128px",
               background: value,
               display: "flex",
               alignItems: "center",
