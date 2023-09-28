@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: "Work Sans", monospace;
+    overflow-x: hidden;
   }
 
   strong,

@@ -38,16 +38,11 @@ export const ShowcaseHero = () => {
       <Hero
         title="Partner"
         body={`Le partnership sono il nostro valore aggiunto per offrire soluzioni innovative e all'avanguardia. Collaboriamo con leader globali per combinare la nostra competenza con strumenti di qualità.`}
-        imgUrl={
+        imgDodgeUrl={
           import.meta.env.DEV
-            ? "/images/partner-normal.png"
-            : "/ns-hinto/images/partner-normal.png"
+            ? "/images/partner-dodge.png"
+            : "/ns-hinto/images/partner-dodge.png"
         }
-        // imgDodgeUrl={
-        //   import.meta.env.DEV
-        //     ? "/images/partner-dodge.png"
-        //     : "/ns-hinto/images/partner-dodge.png"
-        // }
       />
       <hr />
       <Hero
@@ -65,32 +60,61 @@ export const ShowcaseHero = () => {
             valore dall'impatto concreto.
           </p>
         `}
-        imgUrl={
+        imgDodgeUrl={
           import.meta.env.DEV
-            ? "/images/portfolio-normal.png"
-            : "/ns-hinto/images/portfolio-normal.png"
+            ? "/images/portfolio-dodge.png"
+            : "/ns-hinto/images/portfolio-dodge.png"
         }
-        // imgDodgeUrl={
-        //   import.meta.env.DEV
-        //     ? "/images/portfolio-dodge.png"
-        //     : "/ns-hinto/images/portfolio-dodge.png"
-        // }
+      />
+      <hr />
+      <Hero
+        title="Eventi"
+        body={`Ci piace interagire con le persone, confrontarci, condividere competenze e conoscenze. Ecco perché organizziamo eventi formativi e informativi, online e in presenza. Workshop, webinar, conferenze e non solo: scopri i prossimi appuntamenti.`}
+        contentRight={<CardBlog />}
+        bottomButton={{
+          label: "Scopri tutti gli eventi",
+          url: "#eventi",
+        }}
       />
       <hr />
       <Hero
         title="Blog"
         body={`Qui trovi <strong>articoli, video, guide, tutorial e risorse utili</strong> per comprendere l'ecosistema digitale: approfondiamo metodi, tecnologie e strumenti, condividiamo approcci, conoscenze e novità.`}
+        contentRight={<CardBlog />}
+        bottomButton={{
+          label: "Scopri tutti gli articoli",
+          url: "#articoli",
+        }}
+      />
+      <hr />
+      <Hero
+        title="Accessible innovation: come un design accessibile migliora l'esperienza utente"
+        subtitle="Come superare le barriere che impediscono alle persone di godere appieno di servizi e prodotti digitali."
         imgUrl={
           import.meta.env.DEV
-            ? "/images/portfolio-normal.png"
-            : "/ns-hinto/images/portfolio-normal.png"
+            ? "/images/mock-blog.png"
+            : "/ns-hinto/images/mock-blog.png"
         }
-        // imgDodgeUrl={
-        //   import.meta.env.DEV
-        //     ? "/images/portfolio-dodge.png"
-        //     : "/ns-hinto/images/portfolio-dodge.png"
-        // }
-        contentRight={<CardBlog />}
+        backButton={{
+          label: "Eventi",
+          url: "/",
+        }}
+        $isDetailContent
+      />
+      <hr />
+      <Hero
+        title="Accessible innovation: come un design accessibile migliora l'esperienza utente"
+        subtitle="5 luglio 2023"
+        imgUrl={
+          import.meta.env.DEV
+            ? "/images/mock-blog.png"
+            : "/ns-hinto/images/mock-blog.png"
+        }
+        backButton={{
+          label: "Blog",
+          url: "/",
+        }}
+        $isDetailContent
       />
     </Section>
   );

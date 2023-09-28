@@ -1,5 +1,17 @@
+import styled from "styled-components";
 import { Section } from "../commons/Section";
-import { Colors } from "../commons/Theme";
+import { Colors, DesktopBR } from "../commons/Theme";
+
+const StyledPalette = styled.div`
+  width: calc(100% / 3);
+  height: 128px;
+  font-size: 10px;
+
+  @media screen and (min-width: ${DesktopBR}) {
+    width: 128px;
+    height: 128px;
+  }
+`;
 
 export const ShowcasePalette = () => {
   return (
@@ -14,11 +26,9 @@ export const ShowcasePalette = () => {
         }}
       >
         {Object.entries(Colors).map(([key, value]) => (
-          <div
+          <StyledPalette
             key={key}
             style={{
-              width: "128px",
-              height: "128px",
               background: value,
               display: "flex",
               alignItems: "center",
@@ -27,7 +37,7 @@ export const ShowcasePalette = () => {
             }}
           >
             {key}
-          </div>
+          </StyledPalette>
         ))}
       </div>
     </Section>

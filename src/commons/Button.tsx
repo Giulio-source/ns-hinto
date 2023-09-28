@@ -4,11 +4,12 @@ import { Icon } from "../components/Icons/Icon";
 import { Colors, Flex } from "./Theme";
 
 export const StyledButton = styled.button<StyledButtonProps & { as: string }>`
+  width: fit-content;
   border-radius: 0;
   border: none;
   font-family: "Gilroy", sans-serif;
   font-weight: 600;
-  $padding: ${({ $padding }) => $padding};
+  padding: ${({ $padding }) => $padding};
   cursor: pointer;
   transition: all 0.3s;
   text-decoration: none;

@@ -1,5 +1,6 @@
 import { Button } from "../../commons/Button";
-import { Body, Grid, Heading } from "../../commons/Theme";
+import { Body, Grid, Heading, Label } from "../../commons/Theme";
+import { ArrowLeft } from "../Icons/ArrowLeft";
 import { ChevronDown } from "../Icons/ChevronDown";
 import {
   StyledArticoliButton,
@@ -14,38 +15,55 @@ import { HeroProps } from "./Hero.types";
 
 export const Hero = ({
   title,
+  subtitle,
   body,
   imgUrl,
   imgDodgeUrl,
   contentRight,
+  $isDetailContent = false,
+  backButton,
+  bottomButton,
 }: HeroProps) => {
   return (
     <StyledHero>
       <Grid>
-        <StyledHeroLeft>
-          {title && <Heading size="m">{title}</Heading>}
+        <StyledHeroLeft $isDetailContent={$isDetailContent}>
+          {backButton && (
+            <Button
+              label={backButton.label}
+              href={backButton.url}
+              iconPosition="left"
+              CustomIcon={ArrowLeft}
+              type="ghost"
+              theme="dark"
+            />
+          )}
+          {title && (
+            <Heading size={$isDetailContent ? "s" : "m"}>{title}</Heading>
+          )}
+          {subtitle && <Label size="xl">{subtitle}</Label>}
           {body && <Body size="m" dangerouslySetInnerHTML={{ __html: body }} />}
-          {contentRight && (
+          {bottomButton && (
             <StyledArticoliButton>
               <Button
-                label="Scopri tutti gli articoli"
+                label={bottomButton.label}
                 theme="dark"
                 iconPosition="left"
                 CustomIcon={ChevronDown}
                 type="ghost"
-                href="#articoli"
+                href={bottomButton.url}
               />
             </StyledArticoliButton>
           )}
         </StyledHeroLeft>
         {contentRight && (
           <>
-            <StyledVerticalDivider />
+            {!$isDetailContent && <StyledVerticalDivider />}
             <StyledHeroRightContent>{contentRight}</StyledHeroRightContent>
           </>
         )}
         {!contentRight && (
-          <StyledHeroRightImage>
+          <StyledHeroRightImage $isDetailContent={$isDetailContent}>
             {imgUrl && <img src={imgUrl} alt="Hero image" />}
             {imgDodgeUrl && (
               <StyledImageDodge src={imgDodgeUrl} alt="Hero image" />
