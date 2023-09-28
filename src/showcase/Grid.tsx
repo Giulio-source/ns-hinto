@@ -10,7 +10,7 @@ const GridColumn = styled.div`
 export const ShowcaseGrid = () => {
   return (
     <Section>
-      <h1>Grid showcase</h1>
+      <h1>Showcase: Grid</h1>
       <Grid>
         {Array.from({ length: 12 }).map(() => (
           <GridColumn />

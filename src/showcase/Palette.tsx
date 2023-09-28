@@ -4,7 +4,7 @@ import { Colors } from "../commons/Theme";
 export const ShowcasePalette = () => {
   return (
     <Section>
-      <h1>Palette showcase</h1>
+      <h1>Showcase: Palette</h1>
       <br />
       <div
         style={{
