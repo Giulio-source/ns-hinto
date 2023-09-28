@@ -1,34 +1,20 @@
 import { Pixels } from "./commons/Pixels";
-import { Section } from "./commons/Section";
 import { GlobalStyle } from "./commons/Theme";
-import { Hero } from "./components/Hero/Hero";
+import { Header } from "./components/Header/Header";
 import { ShowcaseButtons } from "./showcase/Buttons";
 import { ShowcaseGrid } from "./showcase/Grid";
 import { ShowcaseIcons } from "./showcase/Icons";
 import { ShowcaseLogos } from "./showcase/Logos";
 import { ShowcasePalette } from "./showcase/Palette";
+import { ShowcaseHero } from "./showcase/ShowcaseHero";
 import { ShowcaseTypography } from "./showcase/Typography";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Section theme="dark">
-        <Hero
-          title="Competenze"
-          body={`Combiniamo competenze eterogenee e <strong>specialistiche</strong> in diversi ambiti per trasformare idee innovative in soluzioni digitali di successo. Esplora le nostre aree di expertise.`}
-          imgUrl={
-            import.meta.env.DEV
-              ? "/images/competenze-normal.png"
-              : "/ns-hinto/images/competenze-normal.png"
-          }
-          imgDodgeUrl={
-            import.meta.env.DEV
-              ? "/images/competenze-dodge.png"
-              : "/ns-hinto/images/competenze-dodge.png"
-          }
-        />
-      </Section>
+      <Header />
+      <ShowcaseHero />
       <ShowcasePalette />
       <ShowcaseGrid />
       <ShowcaseIcons />

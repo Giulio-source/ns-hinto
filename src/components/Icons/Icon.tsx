@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DesktopBR } from "../../commons/Theme";
 
 const StyledIcon = styled.div<StyledIconProps>`
   width: ${({ width }) => width};
@@ -16,10 +17,15 @@ const StyledIcon = styled.div<StyledIconProps>`
     width: 100%;
     height: 100%;
   }
+
+  @media screen and (min-width: ${DesktopBR}) {
+    width: ${({ width, desktopWidth }) => desktopWidth ?? width};
+  }
 `;
 
 export const Icon = ({
   width = "24px",
+  desktopWidth,
   stroke,
   fill,
   hoverStroke,
@@ -30,6 +36,7 @@ export const Icon = ({
   return (
     <StyledIcon
       width={width}
+      desktopWidth={desktopWidth}
       stroke={stroke}
       fill={fill}
       hoverStroke={hoverStroke}
@@ -43,6 +50,7 @@ export const Icon = ({
 
 type StyledIconProps = {
   width?: string;
+  desktopWidth?: string;
   stroke?: string;
   fill?: string;
   hoverStroke?: string;

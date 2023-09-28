@@ -6,6 +6,8 @@ import WorkSans500 from "../assets/fonts/work-sans-500.woff2";
 import WorkSans600 from "../assets/fonts/work-sans-600.woff2";
 import WorkSans700 from "../assets/fonts/work-sans-700.woff2";
 
+export const DesktopBR = "768px";
+
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -16,9 +18,38 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Work Sans", monospace;
   }
 
-  h1 {
-    margin-bottom: 32px;
+  strong,
+  b {
+    font-weight: 600;
   }
+
+  figure {
+    blockquote {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 300;
+      font-family: "Gilroy", sans-serif;
+    }
+    figcaption {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (min-width: ${DesktopBR}) {   
+      figure {
+        blockquote {
+          font-size: 28px;
+          line-height: 36px;
+        }
+        figcaption {
+          font-size: 18px;
+          line-height: 30px;
+          font-weight: 600;
+        }
+      }
+    }
 
    /* Gilroy */
    @font-face {
@@ -96,13 +127,12 @@ export const Colors = {
   blue600: "#1600A3 ",
 };
 
-export const DesktopBR = "768px";
-
 export const Grid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 16px;
+  row-gap: 32px;
   max-width: 1240px;
   margin: auto;
 
@@ -192,11 +222,6 @@ export const Body = styled.div<{
   font-family: "Work Sans", sans-serif;
   font-weight: ${({ weight = 400 }) => weight};
   text-decoration: ${({ underline }) => (underline ? "underline" : "none")};
-
-  strong,
-  b {
-    font-weight: 600;
-  }
 
   ${({ size }) => {
     if (size === "l") {

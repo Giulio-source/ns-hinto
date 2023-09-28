@@ -42,15 +42,18 @@ export const StyledSection = styled.div<Pick<SectionProps, "theme">>`
         `};
 `;
 
-const StyledSectionContent = styled.div<Pick<SectionProps, "defaultPadding">>`
+export const StyledSectionContent = styled.div<
+  Pick<SectionProps, "defaultPadding">
+>`
+  width: 100%;
   margin: 0 auto;
-  padding: ${({ defaultPadding }) =>
+  padding: ${({ defaultPadding = false }) =>
     defaultPadding ? "32px 16px" : "0px 16px"};
 
   max-width: 1304px; // 1240px (content) + 64px (horizontal padding)
 
   @media screen and (min-width: ${DesktopBR}) {
-    padding: ${({ defaultPadding }) =>
+    padding: ${({ defaultPadding = false }) =>
       defaultPadding ? "80px 32px" : "0px 32px"};
   }
 `;
