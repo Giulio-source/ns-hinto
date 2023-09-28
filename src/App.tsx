@@ -17,9 +17,17 @@ function App() {
         <Hero
           title="Competenze"
           body={`Combiniamo competenze eterogenee e <strong>specialistiche</strong> in diversi ambiti per trasformare idee innovative in soluzioni digitali di successo. Esplora le nostre aree di expertise.`}
-          imgUrl={'/images/competenze-normal.png'}
-          imgDodgeUrl={'/images/competenze-dodge.png'}
-       />
+          imgUrl={
+            import.meta.env.DEV
+              ? "/images/competenze-normal.png"
+              : "/ns-hinto/images/competenze-normal.png"
+          }
+          imgDodgeUrl={
+            import.meta.env.DEV
+              ? "/images/competenze-dodge.png"
+              : "/ns-hinto/images/competenze-dodge.png"
+          }
+        />
       </Section>
       <ShowcasePalette />
       <ShowcaseGrid />
