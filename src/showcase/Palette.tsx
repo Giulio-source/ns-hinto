@@ -1,9 +1,11 @@
+import { Section } from "../commons/Section";
 import { Colors } from "../commons/Theme";
-import { Section } from "./Section/Section";
 
 export const ShowcasePalette = () => {
   return (
-    <Section title="Palette">
+    <Section>
+      <h1>Palette showcase</h1>
+      <br />
       <div
         style={{
           display: "flex",

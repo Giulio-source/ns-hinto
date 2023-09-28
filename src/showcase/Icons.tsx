@@ -1,3 +1,4 @@
+import { Section } from "../commons/Section";
 import { Grid } from "../commons/Theme";
 import { Alert } from "../components/Icons/Alert";
 import { ArrowDown } from "../components/Icons/ArrowDown";
@@ -26,11 +27,11 @@ import { Plus } from "../components/Icons/Plus";
 import { Slider } from "../components/Icons/Slider";
 import { ZoomIn } from "../components/Icons/ZoomIn";
 import { ZoomOut } from "../components/Icons/ZoomOut";
-import { Section } from "./Section/Section";
 
 export const ShowcaseIcons = () => {
   return (
-    <Section title="Icons">
+    <Section>
+      <h1>Showcase: Icons</h1>
       <Grid style={{ rowGap: "24px" }}>
         <Icon Icon={ArrowRight} />
         <Icon Icon={ArrowLeft} />

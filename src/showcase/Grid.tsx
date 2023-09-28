@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Colors, Grid } from "../commons/Theme";
-import { Section } from "./Section/Section";
+import { Section } from "../commons/Section";
 
 const GridColumn = styled.div`
   background: ${Colors.magenta50};
@@ -9,7 +9,8 @@ const GridColumn = styled.div`
 
 export const ShowcaseGrid = () => {
   return (
-    <Section title="Grid">
+    <Section>
+      <h1>Grid showcase</h1>
       <Grid>
         {Array.from({ length: 12 }).map(() => (
           <GridColumn />

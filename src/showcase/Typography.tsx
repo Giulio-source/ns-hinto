@@ -1,9 +1,10 @@
+import { Section } from "../commons/Section";
 import { Body, Flex, Heading, Label } from "../commons/Theme";
-import { Section } from "./Section/Section";
 
 export const ShowcaseTypography = () => {
   return (
-    <Section title="Typography">
+    <Section>
+      <h1>Showcase: Typography</h1>
       <Flex gap={24} direction="column">
         <Flex>
           <Heading size="l">Heading L</Heading>

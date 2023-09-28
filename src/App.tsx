@@ -5,17 +5,21 @@ import { ShowcaseIcons } from "./showcase/Icons";
 import { ShowcaseLogos } from "./showcase/Logos";
 import { ShowcasePalette } from "./showcase/Palette";
 import { ShowcaseTypography } from "./showcase/Typography";
+import { Pixels } from "./commons/Pixels";
 
 function App() {
   return (
     <>
       <GlobalStyle />
+
       <ShowcasePalette />
       <ShowcaseGrid />
       <ShowcaseIcons />
       <ShowcaseLogos />
       <ShowcaseTypography />
       <ShowcaseButtons />
+
+      <Pixels />
     </>
   );
 }

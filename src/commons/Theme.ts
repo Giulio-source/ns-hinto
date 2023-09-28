@@ -16,6 +16,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Work Sans", monospace;
   }
 
+  h1 {
+    margin-bottom: 32px;
+  }
+
    /* Gilroy */
    @font-face {
     font-display: swap;

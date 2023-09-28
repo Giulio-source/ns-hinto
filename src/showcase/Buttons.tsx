@@ -1,12 +1,13 @@
 import { Button } from "../commons/Button";
-import { Colors, Flex } from "../commons/Theme";
+import { Section } from "../commons/Section";
+import { Flex } from "../commons/Theme";
 import { ArrowRight } from "../components/Icons/ArrowRight";
-import { Section } from "./Section/Section";
 
 export const ShowcaseButtons = () => {
   return (
     <>
-      <Section title="Buttons Light" background={Colors.neutral50}>
+      <Section>
+        <h1>Showcase: Buttons Light</h1>
         <h2>Primary buttons</h2>
         <br />
         <Flex gap={16} alignItems="center">
@@ -320,11 +321,8 @@ export const ShowcaseButtons = () => {
           />
         </Flex>
       </Section>
-      <Section
-        title="Buttons Dark"
-        background={Colors.neutral900}
-        color={Colors.neutral0}
-      >
+      <Section theme="dark">
+        <h1>Showcase: Buttons Dark</h1>
         <h2 style={{ color: "white" }}>Primary buttons</h2>
         <br />
         <Flex gap={16} alignItems="center">
