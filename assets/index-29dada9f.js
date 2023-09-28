@@ -443,7 +443,7 @@ Error generating stack: `+i.message+`
   height: 68px;
   width: 100%;
   top: 0px;
-  background: rgba(20, 20, 20, 0.8);
+  background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(4px);
   z-index: 1;
   color: white;
@@ -527,7 +527,7 @@ Error generating stack: `+i.message+`
       `;if(e==="dark")return t==="secondary"?R`
           color: ${_.neutral0};
           border: 1px solid ${_.neutral0};
-          background: rgba(20, 20, 20, 0.5);
+          background: rgba(10, 10, 10, 0.5);
           &:disabled {
             color: ${_.neutral600};
             border-color: ${_.neutral600};
