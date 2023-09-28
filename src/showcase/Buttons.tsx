@@ -6,7 +6,7 @@ import { ArrowRight } from "../components/Icons/ArrowRight";
 export const ShowcaseButtons = () => {
   return (
     <>
-      <Section>
+      <Section defaultPadding>
         <h1>Showcase: Buttons Light</h1>
         <h2>Primary buttons</h2>
         <br />
@@ -321,7 +321,7 @@ export const ShowcaseButtons = () => {
           />
         </Flex>
       </Section>
-      <Section theme="dark">
+      <Section theme="dark" defaultPadding>
         <h1>Showcase: Buttons Dark</h1>
         <h2 style={{ color: "white" }}>Primary buttons</h2>
         <br />

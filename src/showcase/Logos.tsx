@@ -7,14 +7,14 @@ import { MonogramLogo } from "../components/Icons/MonogramLogo";
 export const ShowcaseLogos = () => {
   return (
     <>
-      <Section>
+      <Section defaultPadding>
         <h1>Showcase: Logos</h1>
         <Flex gap={40}>
           <Icon Icon={MainLogo} width="500px" />
           <Icon Icon={MonogramLogo} width="50px" />
         </Flex>
       </Section>
-      <Section theme="dark">
+      <Section theme="dark" defaultPadding>
         <h1>Showcase: Logos Dark</h1>
         <Flex gap={40}>
           <Icon Icon={MainLogo} width="500px" fill="white" />

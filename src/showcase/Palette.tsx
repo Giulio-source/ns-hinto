@@ -3,7 +3,7 @@ import { Colors } from "../commons/Theme";
 
 export const ShowcasePalette = () => {
   return (
-    <Section>
+    <Section defaultPadding>
       <h1>Showcase: Palette</h1>
       <br />
       <div

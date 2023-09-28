@@ -193,6 +193,11 @@ export const Body = styled.div<{
   font-weight: ${({ weight = 400 }) => weight};
   text-decoration: ${({ underline }) => (underline ? "underline" : "none")};
 
+  strong,
+  b {
+    font-weight: 600;
+  }
+
   ${({ size }) => {
     if (size === "l") {
       return css`
@@ -255,6 +260,11 @@ export const Label = styled.div<{
   font-weight: ${({ weight = 500 }) => weight};
   text-transform: ${({ uppercase }) => (uppercase ? "uppercase" : "none")};
   text-decoration: ${({ underline }) => (underline ? "underline" : "none")};
+
+  strong,
+  b {
+    font-weight: 600;
+  }
 
   ${({ size }) => {
     if (size === "xl" || size === "l") {

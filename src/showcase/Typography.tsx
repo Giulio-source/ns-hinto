@@ -3,7 +3,7 @@ import { Body, Flex, Heading, Label } from "../commons/Theme";
 
 export const ShowcaseTypography = () => {
   return (
-    <Section>
+    <Section defaultPadding>
       <h1>Showcase: Typography</h1>
       <Flex gap={24} direction="column">
         <Flex>

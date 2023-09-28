@@ -58,7 +58,7 @@ const StyledSectionContent = styled.div<Pick<SectionProps, "defaultPadding">>`
 export const Section = ({
   theme = "light",
   children,
-  defaultPadding = true,
+  defaultPadding = false,
 }: SectionProps) => {
   return (
     <StyledSection theme={theme}>

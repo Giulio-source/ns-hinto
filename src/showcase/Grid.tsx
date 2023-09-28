@@ -1,15 +1,16 @@
 import styled from "styled-components";
-import { Colors, Grid } from "../commons/Theme";
 import { Section } from "../commons/Section";
+import { Grid } from "../commons/Theme";
 
 const GridColumn = styled.div`
-  background: ${Colors.magenta50};
+  background: hsla(348, 71%, 96%, 0.6);
+  backdrop-filter: blur(16px);
   height: 400px;
 `;
 
 export const ShowcaseGrid = () => {
   return (
-    <Section>
+    <Section defaultPadding>
       <h1>Showcase: Grid</h1>
       <Grid>
         {Array.from({ length: 12 }).map(() => (
