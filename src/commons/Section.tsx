@@ -43,29 +43,29 @@ export const StyledSection = styled.div<Pick<SectionProps, "theme">>`
 `;
 
 export const StyledSectionContent = styled.div<
-  Pick<SectionProps, "defaultPadding">
+  Pick<SectionProps, "$defaultPadding">
 >`
   width: 100%;
   margin: 0 auto;
-  padding: ${({ defaultPadding = false }) =>
-    defaultPadding ? "32px 16px" : "0px 16px"};
+  padding: ${({ $defaultPadding = false }) =>
+    $defaultPadding ? "32px 16px" : "0px 16px"};
 
   max-width: 1304px; // 1240px (content) + 64px (horizontal padding)
 
   @media screen and (min-width: ${DesktopBR}) {
-    padding: ${({ defaultPadding = false }) =>
-      defaultPadding ? "80px 32px" : "0px 32px"};
+    padding: ${({ $defaultPadding = false }) =>
+      $defaultPadding ? "80px 32px" : "0px 32px"};
   }
 `;
 
 export const Section = ({
   theme = "light",
   children,
-  defaultPadding = false,
+  $defaultPadding = false,
 }: SectionProps) => {
   return (
     <StyledSection theme={theme}>
-      <StyledSectionContent defaultPadding={defaultPadding}>
+      <StyledSectionContent $defaultPadding={$defaultPadding}>
         {children}
       </StyledSectionContent>
     </StyledSection>
@@ -75,5 +75,5 @@ export const Section = ({
 type SectionProps = {
   theme?: "light" | "dark";
   children: React.ReactNode;
-  defaultPadding?: boolean;
+  $defaultPadding?: boolean;
 };

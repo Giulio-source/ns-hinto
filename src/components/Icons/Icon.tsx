@@ -11,7 +11,7 @@ const StyledIcon = styled.div<StyledIconProps>`
   justify-content: center;
   &:hover {
     stroke: ${({ hoverStroke }) => hoverStroke};
-    fill: ${({ hoverFill }) => hoverFill};
+    fill: ${({ $hoverFill }) => $hoverFill};
   }
   svg {
     width: 100%;
@@ -19,28 +19,28 @@ const StyledIcon = styled.div<StyledIconProps>`
   }
 
   @media screen and (min-width: ${DesktopBR}) {
-    width: ${({ width, desktopWidth }) => desktopWidth ?? width};
+    width: ${({ width, $desktopWidth }) => $desktopWidth ?? width};
   }
 `;
 
 export const Icon = ({
   width = "24px",
-  desktopWidth,
+  $desktopWidth,
   stroke,
   fill,
   hoverStroke,
-  hoverFill = fill,
+  $hoverFill = fill,
   Icon,
   onClick,
 }: IconProps) => {
   return (
     <StyledIcon
       width={width}
-      desktopWidth={desktopWidth}
+      $desktopWidth={$desktopWidth}
       stroke={stroke}
       fill={fill}
       hoverStroke={hoverStroke}
-      hoverFill={hoverFill}
+      $hoverFill={$hoverFill}
       onClick={onClick}
     >
       <Icon />
@@ -50,11 +50,11 @@ export const Icon = ({
 
 type StyledIconProps = {
   width?: string;
-  desktopWidth?: string;
+  $desktopWidth?: string;
   stroke?: string;
   fill?: string;
   hoverStroke?: string;
-  hoverFill?: string;
+  $hoverFill?: string;
   onClick?: (() => void) | undefined | null;
 };
 

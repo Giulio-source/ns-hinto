@@ -10,11 +10,11 @@ const GridColumn = styled.div`
 
 export const ShowcaseGrid = () => {
   return (
-    <Section defaultPadding>
+    <Section $defaultPadding>
       <h1>Showcase: Grid</h1>
       <Grid>
-        {Array.from({ length: 12 }).map(() => (
-          <GridColumn />
+        {Array.from({ length: 12 }).map((_, i) => (
+          <GridColumn key={i} />
         ))}
       </Grid>
     </Section>

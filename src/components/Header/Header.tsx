@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       <StyledSectionContent>
-        <Icon Icon={MainLogo} width="160px" desktopWidth="200px" fill="currentColor" />
+        <Icon Icon={MainLogo} width="160px" $desktopWidth="200px" fill="currentColor" />
       </StyledSectionContent>
     </StyledHeader>
   );

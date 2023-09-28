@@ -1,4 +1,5 @@
 import { Section } from "../commons/Section";
+import { CardBlog } from "../components/CardBlog/CardBlog";
 import { Hero } from "../components/Hero/Hero";
 
 export const ShowcaseHero = () => {
@@ -35,22 +36,22 @@ export const ShowcaseHero = () => {
       />
       <hr />
       <Hero
-        title="Partner ⚠️"
+        title="Partner"
         body={`Le partnership sono il nostro valore aggiunto per offrire soluzioni innovative e all'avanguardia. Collaboriamo con leader globali per combinare la nostra competenza con strumenti di qualità.`}
         imgUrl={
           import.meta.env.DEV
             ? "/images/partner-normal.png"
             : "/ns-hinto/images/partner-normal.png"
         }
-        imgDodgeUrl={
-          import.meta.env.DEV
-            ? "/images/partner-dodge.png"
-            : "/ns-hinto/images/partner-dodge.png"
-        }
+        // imgDodgeUrl={
+        //   import.meta.env.DEV
+        //     ? "/images/partner-dodge.png"
+        //     : "/ns-hinto/images/partner-dodge.png"
+        // }
       />
       <hr />
       <Hero
-        title="Portfolio ⚠️"
+        title="Portfolio"
         body={`
           <figure>
             <blockquote>
@@ -69,11 +70,27 @@ export const ShowcaseHero = () => {
             ? "/images/portfolio-normal.png"
             : "/ns-hinto/images/portfolio-normal.png"
         }
-        imgDodgeUrl={
+        // imgDodgeUrl={
+        //   import.meta.env.DEV
+        //     ? "/images/portfolio-dodge.png"
+        //     : "/ns-hinto/images/portfolio-dodge.png"
+        // }
+      />
+      <hr />
+      <Hero
+        title="Blog"
+        body={`Qui trovi <strong>articoli, video, guide, tutorial e risorse utili</strong> per comprendere l'ecosistema digitale: approfondiamo metodi, tecnologie e strumenti, condividiamo approcci, conoscenze e novità.`}
+        imgUrl={
           import.meta.env.DEV
-            ? "/images/portfolio-dodge.png"
-            : "/ns-hinto/images/portfolio-dodge.png"
+            ? "/images/portfolio-normal.png"
+            : "/ns-hinto/images/portfolio-normal.png"
         }
+        // imgDodgeUrl={
+        //   import.meta.env.DEV
+        //     ? "/images/portfolio-dodge.png"
+        //     : "/ns-hinto/images/portfolio-dodge.png"
+        // }
+        contentRight={<CardBlog />}
       />
     </Section>
   );

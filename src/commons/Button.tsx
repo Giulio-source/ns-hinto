@@ -3,14 +3,15 @@ import styled, { css } from "styled-components";
 import { Icon } from "../components/Icons/Icon";
 import { Colors, Flex } from "./Theme";
 
-export const StyledButton = styled.button<StyledButtonProps>`
+export const StyledButton = styled.button<StyledButtonProps & { as: string }>`
   border-radius: 0;
   border: none;
   font-family: "Gilroy", sans-serif;
   font-weight: 600;
-  padding: ${({ padding }) => padding};
+  $padding: ${({ $padding }) => $padding};
   cursor: pointer;
   transition: all 0.3s;
+  text-decoration: none;
 
   ${({ size }) => {
     if (size === "s") {
@@ -44,6 +45,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
             color: ${Colors.neutral0};
             background-color: ${Colors.blue400};
             border-color: ${Colors.blue400};
+            outline: none;
           }
           @media (hover: hover) {
             &:not(:disabled):hover {
@@ -64,6 +66,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
           }
           &:not(:disabled):active {
             color: ${Colors.blue400};
+            outline: none;
           }
           @media (hover: hover) {
             &:not(:disabled):hover {
@@ -82,6 +85,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
         }
         &:not(:disabled):active {
           background-color: ${Colors.blue400};
+          outline: none;
         }
         @media (hover: hover) {
           &:not(:disabled):hover {
@@ -105,6 +109,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
             color: ${Colors.neutral0};
             background-color: ${Colors.blue400};
             border-color: ${Colors.blue400};
+            outline: none;
           }
           @media (hover: hover) {
             &:not(:disabled):hover {
@@ -125,6 +130,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
           }
           &:not(:disabled):active {
             color: ${Colors.blue100};
+            outline: none;
           }
           @media (hover: hover) {
             &:not(:disabled):hover {
@@ -144,6 +150,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
         &:not(:disabled):active {
           color: ${Colors.neutral0};
           background-color: ${Colors.blue400};
+          outline: none;
         }
         @media (hover: hover) {
           &:not(:disabled):hover {
@@ -165,6 +172,7 @@ export const Button = ({
   iconPosition = "right",
   CustomIcon,
   onClick,
+  href,
 }: ButtonProps) => {
   const uxPadding = useMemo(() => {
     if (type === "ghost") return "0";
@@ -179,40 +187,46 @@ export const Button = ({
     return "16px 32px";
   }, [label, size, CustomIcon, iconPosition, type]);
 
-  const ButtonIcon = () =>
-    CustomIcon && (
-      <Icon
-        Icon={CustomIcon}
-        width={size === "s" ? "16px" : "24px"}
-        fill="currentColor"
-      />
-    );
-
   return (
     <StyledButton
       theme={theme}
       type={type}
       disabled={disabled}
       size={size}
-      padding={uxPadding}
+      $padding={uxPadding}
       onClick={onClick}
+      href={href}
+      as={href ? "a" : "button"}
     >
-      <Flex gap={8}>
-        {ButtonIcon && iconPosition === "left" && <ButtonIcon />}
+      <Flex $gap={8}>
+        {CustomIcon && iconPosition === "left" && (
+          <Icon
+            Icon={CustomIcon}
+            width={size === "s" ? "16px" : "24px"}
+            fill="currentColor"
+          />
+        )}
         {label}
-        {ButtonIcon && iconPosition === "right" && <ButtonIcon />}
+        {CustomIcon && iconPosition === "right" && (
+          <Icon
+            Icon={CustomIcon}
+            width={size === "s" ? "16px" : "24px"}
+            fill="currentColor"
+          />
+        )}
       </Flex>
     </StyledButton>
   );
 };
 
 type StyledButtonProps = ButtonProps & {
-  padding: string;
+  $padding: string;
 };
 
 type ButtonProps = {
   type?: "primary" | "secondary" | "ghost";
-  onClick: () => void;
+  onClick?: () => void;
+  href?: string;
   size?: "m" | "s";
   theme?: "dark" | "light";
   label?: string;

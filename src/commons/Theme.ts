@@ -144,23 +144,23 @@ export const Grid = styled.div`
 
 export const Flex = styled.div<{
   direction?: "row" | "column";
-  gap?: number;
+  $gap?: number;
   wrap?: "wrap" | "nowrap";
-  alignItems?: "start" | "center" | "end";
+  $alignItems?: "start" | "center" | "end";
 }>`
   display: flex;
   flex-direction: ${({ direction }) => direction};
-  gap: ${({ gap = 24 }) => `${gap}px`};
+  gap: ${({ $gap = 24 }) => `${$gap}px`};
   flex-wrap: ${({ wrap = "wrap" }) => wrap};
-  align-items: ${({ alignItems = "start" }) => alignItems};
+  align-items: ${({ $alignItems = "start" }) => $alignItems};
 `;
 
 export const Heading = styled.div<{
   size: "l" | "m" | "s" | "xs";
-  weight?: 300 | 600;
+  $weight?: 300 | 600;
 }>`
   font-family: "Gilroy", sans-serif;
-  font-weight: ${({ weight = 600 }) => weight};
+  font-weight: ${({ $weight = 600 }) => $weight};
 
   ${({ size }) => {
     if (size === "l") {
@@ -215,13 +215,13 @@ export const Heading = styled.div<{
 
 export const Body = styled.div<{
   size: "l" | "m" | "s" | "xs";
-  weight?: 400 | 500 | 600 | 700;
-  underline?: boolean;
-  narrow?: boolean;
+  $weight?: 400 | 500 | 600 | 700;
+  $underline?: boolean;
+  $narrow?: boolean;
 }>`
   font-family: "Work Sans", sans-serif;
-  font-weight: ${({ weight = 400 }) => weight};
-  text-decoration: ${({ underline }) => (underline ? "underline" : "none")};
+  font-weight: ${({ $weight = 400 }) => $weight};
+  text-decoration: ${({ $underline }) => ($underline ? "underline" : "none")};
 
   ${({ size }) => {
     if (size === "l") {
@@ -245,7 +245,7 @@ export const Body = styled.div<{
   }};
 
   @media screen and (min-width: ${DesktopBR}) {
-    ${({ size, narrow }) => {
+    ${({ size, $narrow }) => {
       if (size === "l") {
         return css`
           font-size: 22px;
@@ -261,7 +261,7 @@ export const Body = styled.div<{
       if (size === "s") {
         return css`
           font-size: 16px;
-          line-height: ${narrow ? "24px" : "28px"};
+          line-height: ${$narrow ? "24px" : "28px"};
         `;
       }
       if (size === "xs") {
@@ -275,16 +275,16 @@ export const Body = styled.div<{
 `;
 
 export const Label = styled.div<{
-  font?: "Work Sans" | "Gilroy";
+  $font?: "Work Sans" | "Gilroy";
   size: "xl" | "l" | "m" | "s" | "xs";
-  weight?: 300 | 400 | 500 | 600 | 700;
-  uppercase?: boolean;
-  underline?: boolean;
+  $weight?: 300 | 400 | 500 | 600 | 700;
+  $uppercase?: boolean;
+  $underline?: boolean;
 }>`
-  font-family: ${({ font = "Gilroy" }) => font}, sans-serif;
-  font-weight: ${({ weight = 500 }) => weight};
-  text-transform: ${({ uppercase }) => (uppercase ? "uppercase" : "none")};
-  text-decoration: ${({ underline }) => (underline ? "underline" : "none")};
+  font-family: ${({ $font = "Gilroy" }) => $font}, sans-serif;
+  font-weight: ${({ $weight = 500 }) => $weight};
+  text-transform: ${({ $uppercase }) => ($uppercase ? "uppercase" : "none")};
+  text-decoration: ${({ $underline }) => ($underline ? "underline" : "none")};
 
   strong,
   b {

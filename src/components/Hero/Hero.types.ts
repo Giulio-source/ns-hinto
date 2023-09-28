@@ -3,4 +3,5 @@ export type HeroProps = {
   body?: string;
   imgUrl?: string;
   imgDodgeUrl?: string;
+  contentRight?: React.ReactNode;
 };

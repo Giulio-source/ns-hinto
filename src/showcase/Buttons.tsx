@@ -6,11 +6,11 @@ import { ArrowRight } from "../components/Icons/ArrowRight";
 export const ShowcaseButtons = () => {
   return (
     <>
-      <Section defaultPadding>
+      <Section $defaultPadding>
         <h1>Showcase: Buttons Light</h1>
         <h2>Primary buttons</h2>
         <br />
-        <Flex gap={16} alignItems="center">
+        <Flex $gap={16} $alignItems="center">
           <Button onClick={() => {}} label="Action verb" />
           <Button
             onClick={() => {}}
@@ -97,7 +97,7 @@ export const ShowcaseButtons = () => {
         <br />
         <h2>Secondary buttons</h2>
         <br />
-        <Flex gap={16} alignItems="center">
+        <Flex $gap={16} $alignItems="center">
           <Button onClick={() => {}} label="Action verb" type="secondary" />
           <Button
             onClick={() => {}}
@@ -210,7 +210,7 @@ export const ShowcaseButtons = () => {
         <br />
         <h2>Ghost buttons</h2>
         <br />
-        <Flex gap={16} alignItems="center">
+        <Flex $gap={16} $alignItems="center">
           <Button onClick={() => {}} label="Action verb" type="ghost" />
           <Button
             onClick={() => {}}
@@ -321,11 +321,11 @@ export const ShowcaseButtons = () => {
           />
         </Flex>
       </Section>
-      <Section theme="dark" defaultPadding>
+      <Section theme="dark" $defaultPadding>
         <h1>Showcase: Buttons Dark</h1>
         <h2 style={{ color: "white" }}>Primary buttons</h2>
         <br />
-        <Flex gap={16} alignItems="center">
+        <Flex $gap={16} $alignItems="center">
           <Button onClick={() => {}} label="Action verb" theme="dark" />
           <Button
             onClick={() => {}}
