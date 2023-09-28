@@ -100,7 +100,7 @@ export const StyledButton = styled.button<StyledButtonProps & { as: string }>`
         return css`
           color: ${Colors.neutral0};
           border: 1px solid ${Colors.neutral0};
-          background: rgba(20, 20, 20, 0.5);
+          background: rgba(10, 10, 10, 0.5);
           &:disabled {
             color: ${Colors.neutral600};
             border-color: ${Colors.neutral600};
