@@ -7,7 +7,10 @@ export const ShowcaseHero = () => {
     <Section theme="dark">
       <Hero
         title="Soluzioni"
-        body={`In un contesto digitale sempre più complesso, non esiste un'unica soluzione valida sempre: ogni sfida, ogni idea, ogni progetto ha bisogno di una risposta su misura. In Hinto®Group lo sappiamo bene: abbiamo le competenze e l'esperienza per offrirti una vasta gamma di soluzioni integrate con cui valorizzare ogni aspetto del tuo business.`}
+        body={`In un contesto digitale sempre più complesso, non esiste un'unica soluzione valida sempre: 
+        ogni sfida, ogni idea, ogni progetto ha bisogno di una risposta su misura. 
+        In <a href='https://www.hinto.com/it'>Hinto®Group</a> lo sappiamo bene: abbiamo le competenze e l'esperienza per offrirti
+         una vasta gamma di soluzioni integrate con cui valorizzare ogni aspetto del tuo business.`}
         imgUrl={
           import.meta.env.DEV
             ? "/images/soluzioni-normal.png"

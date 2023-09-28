@@ -10,6 +10,7 @@ const StyledPalette = styled.div`
   @media screen and (min-width: ${DesktopBR}) {
     width: 128px;
     height: 128px;
+    font-size: initial;
   }
 `;
 
@@ -17,7 +18,6 @@ export const ShowcasePalette = () => {
   return (
     <Section $defaultPadding>
       <h1>Showcase: Palette</h1>
-      <br />
       <div
         style={{
           display: "flex",

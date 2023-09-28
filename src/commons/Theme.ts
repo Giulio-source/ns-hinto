@@ -8,6 +8,35 @@ import WorkSans700 from "../assets/fonts/work-sans-700.woff2";
 
 export const DesktopBR = "768px";
 
+export const Colors = {
+  neutral0: "#FFFFFF",
+  neutral50: "#F5F5F5",
+  neutral100: "#E0E0E0",
+  neutral200: "#B8B8B8",
+  neutral300: "#A3A3A3",
+  neutral400: "#8F8F8F",
+  neutral500: "#7A7A7A",
+  neutral600: "#525252",
+  neutral700: "#3D3D3D",
+  neutral800: "#292929",
+  neutral900: "#141414",
+  magenta50: "#FCEDF0",
+  magenta100: "#F7C9D3",
+  magenta200: "#ED8299",
+  magenta300: "#E85E7C",
+  magenta400: "#E12D54",
+  aquamarine50: "#EFFBF6",
+  aquamarine100: "#CEF3E5",
+  aquamarine300: "#78DDB7",
+  aquamarine400: "#47D19C",
+  blue50: "#EDEBFF",
+  blue100: "#CAC2FF",
+  blue200: "#8370FF",
+  blue300: "#6047FF",
+  blue400: "#2B0AFF",
+  blue600: "#1600A3 ",
+};
+
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -17,6 +46,14 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Work Sans", monospace;
     overflow-x: hidden;
+  }
+
+  a {
+  transition: all 0.3s;
+  }
+
+  h1 {
+    margin-bottom: 32px;
   }
 
   strong,
@@ -98,35 +135,6 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${WorkSans700}) format("woff2");
   }
 `;
-
-export const Colors = {
-  neutral0: "#FFFFFF",
-  neutral50: "#F5F5F5",
-  neutral100: "#E0E0E0",
-  neutral200: "#B8B8B8",
-  neutral300: "#A3A3A3",
-  neutral400: "#8F8F8F",
-  neutral500: "#7A7A7A",
-  neutral600: "#525252",
-  neutral700: "#3D3D3D",
-  neutral800: "#292929",
-  neutral900: "#141414",
-  magenta50: "#FCEDF0",
-  magenta100: "#F7C9D3",
-  magenta200: "#ED8299",
-  magenta300: "#E85E7C",
-  magenta400: "#E12D54",
-  aquamarine50: "#EFFBF6",
-  aquamarine100: "#CEF3E5",
-  aquamarine300: "#78DDB7",
-  aquamarine400: "#47D19C",
-  blue50: "#EDEBFF",
-  blue100: "#CAC2FF",
-  blue200: "#8370FF",
-  blue300: "#6047FF",
-  blue400: "#2B0AFF",
-  blue600: "#1600A3 ",
-};
 
 export const Grid = styled.div`
   width: 100%;

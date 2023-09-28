@@ -10,6 +10,13 @@ export const StyledSection = styled.div<Pick<SectionProps, "theme">>`
       ? css`
           background: transparent;
 
+          a {
+            color: ${Colors.blue400};
+            &:hover {
+              color: ${Colors.blue600};
+            }
+          }
+
           &::before {
             content: "";
             position: absolute;
@@ -21,6 +28,13 @@ export const StyledSection = styled.div<Pick<SectionProps, "theme">>`
       : css`
           background: transparent;
           color: white;
+
+          a {
+            color: ${Colors.neutral0};
+            &:hover {
+              color: ${Colors.blue100};
+            }
+          }
 
           &::before {
             content: "";
