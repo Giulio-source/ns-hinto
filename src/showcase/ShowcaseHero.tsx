@@ -1,6 +1,8 @@
 import { Section } from "../commons/Section";
 import { CardBlog } from "../components/CardBlog/CardBlog";
 import { Hero } from "../components/Hero/Hero";
+import circleAnim from "../assets/lottie/circleAnim.json";
+// import circleAnim2 from "../assets/lottie/circleAnim2.json";
 
 export const ShowcaseHero = () => {
   return (
@@ -11,21 +13,13 @@ export const ShowcaseHero = () => {
         ogni sfida, ogni idea, ogni progetto ha bisogno di una risposta su misura. 
         In <a href='https://www.hinto.com/it'>Hinto®Group</a> lo sappiamo bene: abbiamo le competenze e l'esperienza per offrirti
          una vasta gamma di soluzioni integrate con cui valorizzare ogni aspetto del tuo business.`}
-        imgUrl={
-          import.meta.env.DEV
-            ? "/images/soluzioni-normal.png"
-            : "/ns-hinto/images/soluzioni-normal.png"
-        }
-        imgDodgeUrl={
-          import.meta.env.DEV
-            ? "/images/soluzioni-dodge.png"
-            : "/ns-hinto/images/soluzioni-dodge.png"
-        }
+        lottieJson={circleAnim}
       />
       <hr />
       <Hero
         title="Competenze"
         body={`Combiniamo competenze eterogenee e specialistiche in diversi ambiti per trasformare idee innovative in soluzioni digitali di successo. Esplora le nostre aree di expertise.`}
+        // lottieJson={circleAnim2}
         imgUrl={
           import.meta.env.DEV
             ? "/images/competenze-normal.png"

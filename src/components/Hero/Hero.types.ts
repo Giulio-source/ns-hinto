@@ -6,6 +6,7 @@ export type HeroProps = {
   imgDodgeUrl?: string;
   contentRight?: React.ReactNode;
   $isDetailContent?: boolean;
+  lottieJson?: unknown;
   backButton?: {
     label: string;
     url: string;

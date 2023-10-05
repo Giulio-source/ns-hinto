@@ -46,6 +46,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Work Sans", monospace;
     overflow-x: hidden;
+    color: ${Colors.neutral900};
   }
 
   a {
@@ -354,5 +355,31 @@ export const Label = styled.div<{
         `;
       }
     }};
+  }
+`;
+
+export const BodyS_Narrow_CSS = css`
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+
+  font-size: 12px;
+  line-height: 20px;
+
+  @media screen and (min-width: ${DesktopBR}) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+`;
+
+export const LabelS_CSS = css`
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+
+  font-size: 12px;
+  line-height: 16px;
+
+  @media screen and (min-width: ${DesktopBR}) {
+    font-size: 16px;
+    line-height: 20px;
   }
 `;

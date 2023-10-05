@@ -1,3 +1,4 @@
+import Lottie from "lottie-react";
 import { Button } from "../../commons/Button";
 import { Body, Grid, Heading, Label } from "../../commons/Theme";
 import { ArrowLeft } from "../Icons/ArrowLeft";
@@ -23,6 +24,7 @@ export const Hero = ({
   $isDetailContent = false,
   backButton,
   bottomButton,
+  lottieJson,
 }: HeroProps) => {
   return (
     <StyledHero>
@@ -64,9 +66,15 @@ export const Hero = ({
         )}
         {!contentRight && (
           <StyledHeroRightImage $isDetailContent={$isDetailContent}>
-            {imgUrl && <img src={imgUrl} alt="Hero image" />}
-            {imgDodgeUrl && (
-              <StyledImageDodge src={imgDodgeUrl} alt="Hero image" />
+            {lottieJson ? (
+              <Lottie animationData={lottieJson} loop={true} />
+            ) : (
+              <>
+                {imgUrl && <img src={imgUrl} alt="Hero image" />}
+                {imgDodgeUrl && (
+                  <StyledImageDodge src={imgDodgeUrl} alt="Hero image" />
+                )}
+              </>
             )}
           </StyledHeroRightImage>
         )}

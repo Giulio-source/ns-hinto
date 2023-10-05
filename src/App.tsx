@@ -6,6 +6,7 @@ import { ShowcaseGrid } from "./showcase/Grid";
 import { ShowcaseIcons } from "./showcase/Icons";
 import { ShowcaseLogos } from "./showcase/Logos";
 import { ShowcasePalette } from "./showcase/Palette";
+import { ShowcaseForm } from "./showcase/ShowcaseForm";
 import { ShowcaseHero } from "./showcase/ShowcaseHero";
 import { ShowcaseTypography } from "./showcase/Typography";
 
@@ -14,6 +15,7 @@ function App() {
     <>
       <GlobalStyle />
       <Header />
+      <ShowcaseForm />
       <ShowcaseHero />
       <ShowcasePalette />
       <ShowcaseGrid />
