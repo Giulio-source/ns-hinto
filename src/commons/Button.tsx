@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import styled, { css } from "styled-components";
 import { Icon } from "../components/Icons/Icon";
+import { Theme } from "./Section";
 import { Colors, Flex } from "./Theme";
 
 export const StyledButton = styled.button<StyledButtonProps & { as: string }>`
@@ -229,7 +230,7 @@ type ButtonProps = {
   onClick?: () => void;
   href?: string;
   size?: "m" | "s";
-  theme?: "dark" | "light";
+  theme?: Theme;
   label?: string;
   disabled?: boolean;
   CustomIcon?: React.FC;

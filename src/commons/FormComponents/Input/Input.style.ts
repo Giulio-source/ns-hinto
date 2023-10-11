@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BodyS_Narrow_CSS, Colors, LabelS_CSS } from "../../Theme";
+import { Theme } from "../../Section";
 
 export const StyledInput = styled.input<{
   $hasError: boolean;
@@ -60,9 +61,10 @@ export const StyledInputWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const StyledInputHelp = styled.div`
+export const StyledInputHelp = styled.div<{ theme: Theme }>`
   margin-top: 4px;
-  color: ${Colors.neutral400};
+  color: ${({ theme = "light" }) =>
+    theme === "dark" ? Colors.neutral200 : Colors.neutral400};
   ${BodyS_Narrow_CSS};
 `;
 

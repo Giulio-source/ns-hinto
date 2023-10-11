@@ -87,7 +87,9 @@ export const Section = ({
 };
 
 type SectionProps = {
-  theme?: "light" | "dark";
+  theme?: Theme;
   children: React.ReactNode;
   $defaultPadding?: boolean;
 };
+
+export type Theme = "light" | "dark";

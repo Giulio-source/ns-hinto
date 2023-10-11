@@ -1,0 +1,15 @@
+import { FC } from "react";
+import { Theme } from "../../Section";
+
+export type SelectProps = {
+  id: string;
+  helpText?: string;
+  label?: string;
+  errorMessage?: string;
+  CustomIcon?: FC;
+  value?: string;
+  onChange?: (value: string) => void;
+  options: string[];
+  disabled?: boolean;
+  theme?: Theme;
+};

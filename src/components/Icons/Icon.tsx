@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { DesktopBR } from "../../commons/Theme";
 
-const StyledIcon = styled.div<StyledIconProps>`
+export const StyledIcon = styled.div<StyledIconProps>`
   width: ${({ width }) => width};
   fill: ${({ fill }) => fill};
   stroke: ${({ stroke }) => stroke};

@@ -34,6 +34,7 @@ export const Colors = {
   blue200: "#8370FF",
   blue300: "#6047FF",
   blue400: "#2B0AFF",
+  blue500: "#2578D0",
   blue600: "#1600A3 ",
 };
 
