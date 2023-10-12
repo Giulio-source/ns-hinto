@@ -1,10 +1,15 @@
 import { useState } from "react";
+import {
+  Checkbox,
+  CheckboxGroup,
+} from "../commons/FormComponents/Checkbox/Checkbox";
 import { Input } from "../commons/FormComponents/Input/Input";
 import { Select } from "../commons/FormComponents/Select/Select";
 import { TextArea } from "../commons/FormComponents/TextArea/TextArea";
 import { Section } from "../commons/Section";
 import { Flex } from "../commons/Theme";
 import { Plus } from "../components/Icons/Plus";
+import customIconUrl from "../assets/icons/minus.svg";
 
 const options = [
   "Orange",
@@ -28,55 +33,78 @@ export const ShowcaseForm = () => {
 
   return (
     <>
-      <Section theme="dark" $defaultPadding>
-        <h1>Showcase: Dark selects</h1>
-        <Flex $gap={40}>
-          <Select
-            theme="dark"
-            label="Select regular"
-            helpText="Help text"
-            id="fruit-select"
-            options={options}
-            value={select1}
-            onChange={(value) => setSelect1(value)}
-          />
-          <Select
-            theme="dark"
-            label="Select with error"
-            errorMessage="Error message"
-            id="fruit-select2"
-            options={options}
-            value={select2}
-            onChange={(value) => setSelect2(value)}
-          />
-          <Select
-            theme="dark"
-            label="Select disabled"
-            helpText="Help text"
-            id="fruit-select3"
-            options={options}
-            disabled
-            // value={select1}
-            // onChange={(value) => setSelect1(value)}
-          />
-          <Select
-            theme="dark"
-            label="Select disabled"
-            helpText="Help text"
-            id="fruit-select4"
-            options={options}
-            disabled
-            value={"Orange"}
-            // onChange={(value) => setSelect1(value)}
-          />
-        </Flex>
-      </Section>
       <Section $defaultPadding>
         <h1>Showcase: Form components</h1>
         <Flex $gap={40}>
+          <Flex direction="column" $gap={24}>
+            <CheckboxGroup
+              label="Checkbox group verticale"
+              description="Description"
+            >
+              {options.map((opt, i) => (
+                <Checkbox
+                  key={`checkbox-${opt}`}
+                  id={`checkbox-${opt}`}
+                  label={opt}
+                  onChange={() => {}}
+                  disabled={i > 3}
+                  defaultValue={i > 5}
+                />
+              ))}
+            </CheckboxGroup>
+            <CheckboxGroup
+              label="Checkbox group verticale con icona custom"
+              description="Description"
+            >
+              {options.map((opt, i) => (
+                <Checkbox
+                  key={`checkbox2-${opt}`}
+                  id={`checkbox2-${opt}`}
+                  label={opt}
+                  onChange={() => {}}
+                  disabled={i > 3}
+                  defaultValue={i > 5}
+                  customIconUrl={customIconUrl}
+                />
+              ))}
+            </CheckboxGroup>
+            <CheckboxGroup
+              layout="row"
+              label="Checkbox group orizzontale"
+              description="Description"
+            >
+              {options.map((opt, i) => (
+                <Checkbox
+                  key={`checkbox3-${opt}`}
+                  id={`checkbox3-${opt}`}
+                  label={opt}
+                  onChange={() => {}}
+                  disabled={i > 3}
+                  defaultValue={i > 5}
+                />
+              ))}
+            </CheckboxGroup>
+            <CheckboxGroup
+              layout="row"
+              label="Checkbox group orizzontale"
+              description="Description"
+            >
+              {options.map((opt, i) => (
+                <Checkbox
+                  key={`checkbox4-${opt}`}
+                  id={`checkbox4-${opt}`}
+                  label={opt}
+                  onChange={() => {}}
+                  disabled={i > 3}
+                  defaultValue={i > 5}
+                  customIconUrl={customIconUrl}
+                />
+              ))}
+            </CheckboxGroup>
+          </Flex>
           <Select
             label="Select regular"
-            helpText="Help text"
+            description="Help text"
             id="fruit-select"
             options={options}
             value={select1}
@@ -92,7 +120,7 @@ export const ShowcaseForm = () => {
           />
           <Select
             label="Select disabled"
-            helpText="Help text"
+            description="Help text"
             id="fruit-select2"
             options={options}
             disabled
@@ -101,7 +129,7 @@ export const ShowcaseForm = () => {
           />
           <Select
             label="Select disabled"
-            helpText="Help text"
+            description="Help text"
             id="fruit-select2"
             options={options}
             disabled
@@ -111,24 +139,24 @@ export const ShowcaseForm = () => {
           <Input
             label="normal input"
             placeholder="Placeholder"
-            helpText="Help text"
+            description="Help text"
           />
           <Input
             label="input with error"
             placeholder="Placeholder"
-            helpText="Help text"
+            description="Help text"
             errorMessage="Error message"
           />
           <Input
             label="input disabled"
             placeholder="Placeholder"
-            helpText="Help text"
+            description="Help text"
             disabled
           />
           <Input
             label="input with icon"
             placeholder="Placeholder"
-            helpText="Help text"
+            description="Help text"
             CustomIcon={Plus}
           />
           <TextArea
@@ -142,7 +170,7 @@ export const ShowcaseForm = () => {
             id="textarea2"
             label="textarea with help"
             placeholder="Placeholder"
-            helpText="Help text"
+            description="Help text"
             value={textArea2}
             onChange={(e) => setTextArea2(e.target.value)}
           />
@@ -161,6 +189,49 @@ export const ShowcaseForm = () => {
             disabled
             value={textArea4}
             onChange={(e) => setTextArea4(e.target.value)}
+          />
+        </Flex>
+      </Section>
+      <Section theme="dark" $defaultPadding>
+        <h1>Showcase: Dark selects</h1>
+        <Flex $gap={40}>
+          <Select
+            theme="dark"
+            label="Select regular"
+            description="Help text"
+            id="fruit-select"
+            options={options}
+            value={select1}
+            onChange={(value) => setSelect1(value)}
+          />
+          <Select
+            theme="dark"
+            label="Select with error"
+            errorMessage="Error message"
+            id="fruit-select2"
+            options={options}
+            value={select2}
+            onChange={(value) => setSelect2(value)}
+          />
+          <Select
+            theme="dark"
+            label="Select disabled"
+            description="Help text"
+            id="fruit-select3"
+            options={options}
+            disabled
+            // value={select1}
+            // onChange={(value) => setSelect1(value)}
+          />
+          <Select
+            theme="dark"
+            label="Select disabled"
+            description="Help text"
+            id="fruit-select4"
+            options={options}
+            disabled
+            value={"Orange"}
+            // onChange={(value) => setSelect1(value)}
           />
         </Flex>
       </Section>

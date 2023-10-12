@@ -17,7 +17,7 @@ export const TextArea = ({
   onChange,
   label,
   errorMessage,
-  helpText,
+  description,
   maxLength = 150,
   placeholder,
   disabled,
@@ -44,7 +44,7 @@ export const TextArea = ({
       )}
       {!errorMessage && (
         <StyledTextAreaFooter>
-          {helpText ? <StyledInputHelp>{helpText}</StyledInputHelp> : <div />}
+          {description ? <StyledInputHelp>{description}</StyledInputHelp> : <div />}
           <StyledInputHelp>
             {value?.length ?? 0}/{maxLength}
           </StyledInputHelp>

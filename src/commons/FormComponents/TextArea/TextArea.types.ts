@@ -2,7 +2,7 @@ import { ChangeEvent, FC, InputHTMLAttributes } from "react";
 
 export type TextAreaProps = InputHTMLAttributes<HTMLTextAreaElement> & {
   id: string;
-  helpText?: string;
+  description?: string;
   label?: string;
   errorMessage?: string;
   CustomIcon?: FC;

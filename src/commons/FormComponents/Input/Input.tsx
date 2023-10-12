@@ -15,7 +15,7 @@ export const Input = ({
   value,
   onChange,
   placeholder,
-  helpText,
+  description,
   label,
   errorMessage,
   disabled,
@@ -58,8 +58,8 @@ export const Input = ({
           {errorMessage}
         </StyledInputError>
       )}
-      {helpText && !errorMessage && (
-        <StyledInputHelp>{helpText}</StyledInputHelp>
+      {description && !errorMessage && (
+        <StyledInputHelp>{description}</StyledInputHelp>
       )}
     </StyledInputWrapper>
   );

@@ -1,7 +1,7 @@
 import { FC, InputHTMLAttributes } from "react";
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
-  helpText?: string;
+  description?: string;
   label?: string;
   errorMessage?: string;
   CustomIcon?: FC;

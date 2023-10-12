@@ -27,7 +27,7 @@ export const Select = ({
   id,
   label,
   errorMessage,
-  helpText,
+  description,
   options,
   value,
   onChange,
@@ -124,8 +124,8 @@ export const Select = ({
           {errorMessage}
         </StyledInputError>
       )}
-      {helpText && !errorMessage && (
-        <StyledInputHelp theme={theme}>{helpText}</StyledInputHelp>
+      {description && !errorMessage && (
+        <StyledInputHelp theme={theme}>{description}</StyledInputHelp>
       )}
     </StyledSelectWrapper>
   );

@@ -3,7 +3,7 @@ import { Theme } from "../../Section";
 
 export type SelectProps = {
   id: string;
-  helpText?: string;
+  description?: string;
   label?: string;
   errorMessage?: string;
   CustomIcon?: FC;
