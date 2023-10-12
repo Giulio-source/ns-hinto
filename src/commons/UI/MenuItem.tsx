@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { BodyS_Narrow_CSS, Colors } from "../Theme";
+import { BodyS_Narrow_CSS, Colors, DesktopBR } from "../Theme";
 
 const StyledMenuDropdown = styled.div`
   position: absolute;
@@ -27,6 +27,7 @@ const StyledMenuItem = styled.div`
 `;
 
 const StyledMenuItemWrapper = styled.div`
+  display: none;
   position: relative;
 
   a {
@@ -48,6 +49,10 @@ const StyledMenuItemWrapper = styled.div`
         transform: scaleX(1);
       }
     }
+  }
+
+  @media screen and (min-width: ${DesktopBR}) {
+    display: block;
   }
 `;
 
