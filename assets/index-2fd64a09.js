@@ -872,13 +872,17 @@ Error generating stack: `+c.message+`
       cursor: default;
     `}
 `,Checkbox=({id:e,label:i,disabled:s=!1,defaultValue:o=!1,onChange:a,customIconUrl:c})=>{const[d,lt]=reactExports.useState(o);return reactExports.useEffect(()=>{a(d)},[d]),jsxRuntimeExports.jsxs(StyledSingleCheckboxWrapper,{children:[jsxRuntimeExports.jsx(StyledCheckbox,{id:e,type:"checkbox",disabled:s,checked:d,onChange:()=>lt(b=>!b),$customIconUrl:c}),jsxRuntimeExports.jsx(StyledCheckboxLabel,{htmlFor:e,disabled:s,children:i})]})},CheckboxGroup=({layout:e="column",label:i,description:s,children:o})=>jsxRuntimeExports.jsxs(StyledCheckboxGroup,{children:[i&&jsxRuntimeExports.jsx(StyledInputLabel,{children:i}),jsxRuntimeExports.jsx(StyledCheckboxWrapper,{$layout:e,children:o}),s&&jsxRuntimeExports.jsx(StyledInputHelp,{children:s})]}),Input=({value:e,onChange:i,placeholder:s,description:o,label:a,errorMessage:c,disabled:d,CustomIcon:lt})=>jsxRuntimeExports.jsxs(StyledInputWrapper,{children:[a&&jsxRuntimeExports.jsx(StyledInputLabel,{children:a}),jsxRuntimeExports.jsxs("div",{style:{position:"relative"},children:[lt&&jsxRuntimeExports.jsx(StyledInputLeftIcon,{children:jsxRuntimeExports.jsx(Icon,{Icon:lt,width:"16px",fill:d?Colors.neutral200:Colors.neutral900})}),jsxRuntimeExports.jsx(StyledInput,{value:e,onChange:i,placeholder:s,$hasError:!!c,$hasIcon:!!lt,disabled:d}),lt&&jsxRuntimeExports.jsx(StyledInputRightIcon,{children:jsxRuntimeExports.jsx(Icon,{Icon:lt,width:"16px",fill:d?Colors.neutral200:Colors.neutral900})})]}),c&&jsxRuntimeExports.jsxs(StyledInputError,{children:[jsxRuntimeExports.jsx(Icon,{Icon:Alert,width:"16px",fill:"currentColor"}),c]}),o&&!c&&jsxRuntimeExports.jsx(StyledInputHelp,{children:o})]}),StyledSelectIcon=st.div`
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 30px;
   right: 22px;
   transform: translate(0, -50%);
   pointer-events: none;
   z-index: 1;
+
+  @media (hover: hover) {
+    opacity: 0;
+  }
 `,StyledSelect=st.select`
   display: flex;
   gap: 8px;
@@ -886,7 +890,6 @@ Error generating stack: `+c.message+`
   align-items: center;
   padding: 16px 20px;
   appearance: none;
-  opacity: 0;
 
   width: 100%;
   cursor: pointer;
@@ -963,6 +966,10 @@ Error generating stack: `+c.message+`
         }
       `};
     `};
+
+  @media (hover: hover) {
+    opacity: 0;
+  }
 `,StyledSelectWrapper=st.div`
   width: 100%;
   max-width: 320px;
@@ -1121,7 +1128,7 @@ Error generating stack: `+c.message+`
 
   select:focus + ${StyledCustomSelect} {
     display: none;
-  } 
+  }
 
   ${({theme:e})=>e==="dark"&&nt`
       ${StyledIcon} {
