@@ -1,4 +1,4 @@
-import { Button } from "../commons/Button";
+import { Button } from "../commons/UI/Button";
 import { Section } from "../commons/Section";
 import { Flex } from "../commons/Theme";
 import { ArrowRight } from "../components/Icons/ArrowRight";

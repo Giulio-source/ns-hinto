@@ -49,7 +49,7 @@ export const CheckboxGroup = ({
   return (
     <StyledCheckboxGroup>
       {label && <StyledInputLabel>{label}</StyledInputLabel>}
-      <StyledCheckboxWrapper layout={layout}>{children}</StyledCheckboxWrapper>
+      <StyledCheckboxWrapper $layout={layout}>{children}</StyledCheckboxWrapper>
       {description && <StyledInputHelp>{description}</StyledInputHelp>}
     </StyledCheckboxGroup>
   );

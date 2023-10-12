@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import styled, { css } from "styled-components";
-import { Icon } from "../components/Icons/Icon";
-import { Theme } from "./Section";
-import { Colors, Flex } from "./Theme";
+import { Icon } from "../../components/Icons/Icon";
+import { Theme } from "../Section";
+import { Colors, Flex } from "../Theme";
 
 export const StyledButton = styled.button<StyledButtonProps & { as: string }>`
   width: fit-content;

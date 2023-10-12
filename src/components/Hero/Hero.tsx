@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import { Button } from "../../commons/Button";
+import { Button } from "../../commons/UI/Button";
 import { Body, Grid, Heading, Label } from "../../commons/Theme";
 import { ArrowLeft } from "../Icons/ArrowLeft";
 import { ChevronDown } from "../Icons/ChevronDown";

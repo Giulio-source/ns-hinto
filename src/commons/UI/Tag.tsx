@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { Icon } from "../components/Icons/Icon";
-import { Colors, Label } from "./Theme";
+import { Icon } from "../../components/Icons/Icon";
+import { Colors, Label } from "../Theme";
 
 export const StyledTag = styled.button<{ disabled: boolean }>`
   display: flex;

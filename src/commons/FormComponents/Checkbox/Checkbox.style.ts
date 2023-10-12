@@ -84,11 +84,11 @@ export const StyledCheckboxGroup = styled.div`
 `;
 
 export const StyledCheckboxWrapper = styled.div<{
-  layout: CheckboxLayoutType;
+  $layout: CheckboxLayoutType;
 }>`
   display: flex;
-  flex-direction: ${({ layout }) => (layout === "row" ? "row" : "column")};
-  gap: ${({ layout }) => (layout === "row" ? "24px" : "8px ")};
+  flex-direction: ${({ $layout }) => ($layout === "row" ? "row" : "column")};
+  gap: ${({ $layout }) => ($layout === "row" ? "24px" : "8px ")};
 `;
 
 export const StyledCheckboxLabel = styled.label<{ disabled: boolean }>`

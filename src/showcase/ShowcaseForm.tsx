@@ -8,7 +8,7 @@ import { Input } from "../commons/FormComponents/Input/Input";
 import { Select } from "../commons/FormComponents/Select/Select";
 import { TextArea } from "../commons/FormComponents/TextArea/TextArea";
 import { Section } from "../commons/Section";
-import { Tag } from "../commons/Tag";
+import { Tag } from "../commons/UI/Tag";
 import { Flex } from "../commons/Theme";
 import { ArrowRight } from "../components/Icons/ArrowRight";
 import { Plus } from "../components/Icons/Plus";

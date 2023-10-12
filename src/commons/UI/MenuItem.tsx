@@ -1,0 +1,121 @@
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import { BodyS_Narrow_CSS, Colors } from "../Theme";
+
+const StyledMenuItemDropdown = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  display: none;
+
+  background: white;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08),
+    0px 8px 16px 0px rgba(0, 0, 0, 0.04);
+`;
+
+const StyledMenuItem = styled.div`
+  display: flex;
+  align-items: center;
+  background: white;
+
+  height: 48px;
+  padding: 12px 16px;
+
+  cursor: pointer;
+`;
+
+const StyledMenuItemWrapper = styled.div`
+  position: relative;
+
+  a {
+    text-decoration: none;
+    color: ${Colors.neutral900};
+  }
+
+  &:hover {
+    ${StyledMenuItemDropdown} {
+      display: block;
+    }
+    ${StyledMenuItem} {
+      span::before {
+        transform: scaleX(1);
+      }
+    }
+  }
+`;
+
+const StyledMenuSpan = styled.span<{ $isActive: boolean }>`
+  text-decoration: none;
+  ${BodyS_Narrow_CSS}
+  position: relative;
+  width: fit-content;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: ${Colors.neutral900};
+    position: absolute;
+    top: calc(100% - 2px);
+    transition: transform 0.3s;
+    transform-origin: 0 0;
+    transform: scaleX(${({ $isActive }) => ($isActive ? "1" : "0")});
+  }
+`;
+
+const StyledMenuItemChild = styled.div`
+  display: flex;
+  align-items: center;
+  background: white;
+
+  width: 320px;
+  height: 48px;
+  padding: 12px 16px;
+
+  cursor: pointer;
+
+  &:hover {
+    span::before {
+      transform: scaleX(1);
+    }
+  }
+`;
+
+export const MenuItem = ({ label, url, options }: MenuItemProps) => {
+  const [pathname, setPathname] = useState<string>("");
+
+  useEffect(() => {
+    setPathname(window.location.pathname);
+  }, []);
+
+  return (
+    <StyledMenuItemWrapper>
+      <a href={url}>
+        <StyledMenuItem>
+          <StyledMenuSpan $isActive={url === pathname}>{label}</StyledMenuSpan>
+        </StyledMenuItem>
+      </a>
+      {options && (
+        <StyledMenuItemDropdown>
+          {options?.map((opt) => (
+            <a key={opt.label} href={opt.url}>
+              <StyledMenuItemChild>
+                <StyledMenuSpan $isActive={opt.url === pathname}>
+                  {opt.label}
+                </StyledMenuSpan>
+              </StyledMenuItemChild>
+            </a>
+          ))}
+        </StyledMenuItemDropdown>
+      )}
+    </StyledMenuItemWrapper>
+  );
+};
+
+type MenuItemProps = {
+  label: string;
+  url: string;
+  options?: { label: string; url: string }[];
+};
