@@ -114,7 +114,8 @@ export const StyledSelect = styled.select<{
 `;
 
 export const StyledSelectWrapper = styled.div<{ theme: Theme }>`
-  min-width: 320px;
+  width: 100%;
+  max-width: 320px;
 `;
 
 export const StyledCustomSelect = styled.div`

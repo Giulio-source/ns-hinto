@@ -363,24 +363,34 @@ export const BodyS_Narrow_CSS = css`
   font-family: "Work Sans", sans-serif;
   font-weight: 400;
 
+  font-size: 16px;
+  line-height: 24px;
+
+  /* 
+  ? DA CHIEDERE A JESSICA
   font-size: 12px;
   line-height: 20px;
 
   @media screen and (min-width: ${DesktopBR}) {
     font-size: 16px;
     line-height: 24px;
-  }
+  } */
 `;
 
 export const LabelS_CSS = css`
   font-family: "Work Sans", sans-serif;
   font-weight: 500;
 
+  font-size: 16px;
+  line-height: 20px;
+
+  /* 
+  ? DA CHIEDERE A JESSICA
   font-size: 12px;
   line-height: 16px;
 
   @media screen and (min-width: ${DesktopBR}) {
     font-size: 16px;
     line-height: 20px;
-  }
+  } */
 `;

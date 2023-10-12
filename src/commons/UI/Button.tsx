@@ -86,8 +86,8 @@ export const StyledButton = styled.button<StyledButtonProps & { as: string }>`
         color: ${Colors.neutral0};
         background-color: ${Colors.neutral900};
         &:disabled {
-          color: ${Colors.neutral600};
-          background-color: ${Colors.neutral800};
+          color: ${Colors.neutral200};
+          background-color: ${Colors.neutral100};
           cursor: default;
         }
         &:not(:disabled):active {

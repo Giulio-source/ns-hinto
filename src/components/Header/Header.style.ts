@@ -3,7 +3,7 @@ import { Colors } from "../../commons/Theme";
 
 export const StyledHeader = styled.header`
   position: fixed;
-  height: 68px;
+  min-height: 68px;
   width: 100%;
   top: 0px;
   background: rgba(255, 255, 255, 0.8);

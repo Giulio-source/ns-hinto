@@ -8,8 +8,9 @@ import { Input } from "../commons/FormComponents/Input/Input";
 import { Select } from "../commons/FormComponents/Select/Select";
 import { TextArea } from "../commons/FormComponents/TextArea/TextArea";
 import { Section } from "../commons/Section";
-import { Tag } from "../commons/UI/Tag";
 import { Flex } from "../commons/Theme";
+import { Tag } from "../commons/UI/Tag";
+import { Filter } from "../components/Filter/Filter";
 import { ArrowRight } from "../components/Icons/ArrowRight";
 import { Plus } from "../components/Icons/Plus";
 
@@ -32,11 +33,38 @@ export const ShowcaseForm = () => {
   const [textArea4, setTextArea4] = useState<string>("");
   const [select1, setSelect1] = useState<string>("");
   const [select2, setSelect2] = useState<string>("");
+  const [select3, setSelect3] = useState<string>("");
+  const [select4, setSelect4] = useState<string>("");
 
   return (
     <>
       <Section $defaultPadding>
-        <h1>Showcase: Form components</h1>
+        <h1 style={{ marginTop: "40px" }}>Showcase: Form components</h1>
+        <Flex style={{ marginBottom: "40px" }} $gap={24}>
+          <Filter
+            activeFilters={[select3, select4]}
+            disabled={!select3 && !select4}
+            onFilter={() => console.log("Filterinnnn")}
+            filters={
+              <>
+                <Select
+                  id="select-competenza"
+                  label="competenza"
+                  options={["Drupal", "React", "Gatsby"]}
+                  value={select3}
+                  onChange={setSelect3}
+                />
+                <Select
+                  id="select-stato-evento"
+                  label="stato dell'evento"
+                  options={["In corso", "Fatto", "Testing"]}
+                  value={select4}
+                  onChange={setSelect4}
+                />
+              </>
+            }
+          />
+        </Flex>
         <Flex style={{ marginBottom: "40px" }} $gap={24}>
           <Tag label="tag" />
           <Tag label="tag" disabled />

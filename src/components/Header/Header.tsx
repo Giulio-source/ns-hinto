@@ -29,10 +29,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       <StyledSectionContent>
-        <Flex
-          $alignItems="center"
-          $gap={64}
-        >
+        <Flex $alignItems="center" $gap={8} wrap="nowrap">
           <Icon
             Icon={MainLogo}
             width="160px"
