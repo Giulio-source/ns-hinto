@@ -89,6 +89,7 @@ export const StyledCheckboxWrapper = styled.div<{
   display: flex;
   flex-direction: ${({ $layout }) => ($layout === "row" ? "row" : "column")};
   gap: ${({ $layout }) => ($layout === "row" ? "24px" : "8px ")};
+  flex-wrap: wrap;
 `;
 
 export const StyledCheckboxLabel = styled.label<{ disabled: boolean }>`
