@@ -861,6 +861,7 @@ Error generating stack: `+c.message+`
   display: flex;
   flex-direction: ${({$layout:e})=>e==="row"?"row":"column"};
   gap: ${({$layout:e})=>e==="row"?"24px":"8px "};
+  flex-wrap: wrap;
 `,StyledCheckboxLabel=st.label`
   ${BodyS_Narrow_CSS};
   color: ${Colors.neutral900};
