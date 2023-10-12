@@ -8,7 +8,6 @@ export const StyledFilter = styled.div<{
   $showOverflow: boolean;
 }>`
   width: 345px;
-  padding: 16px 24px;
   border: 1px solid ${Colors.neutral900};
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(16px);
@@ -23,6 +22,7 @@ export const StyledFilterHeader = styled.div<{ $open: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 16px 24px;
 
   ${StyledIcon} {
     transition: transform 0.3s;
@@ -31,7 +31,7 @@ export const StyledFilterHeader = styled.div<{ $open: boolean }>`
 `;
 
 export const StyledFilterBody = styled.div`
-  margin-top: 24px;
+  padding: 0 24px 24px;
 
   display: flex;
   flex-direction: column;
