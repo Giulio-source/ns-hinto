@@ -1212,7 +1212,6 @@ Error generating stack: `+c.message+`
   }
 `,Tag=({label:e,disabled:i=!1,CustomIcon:s,iconPosition:o="right"})=>jsxRuntimeExports.jsxs(StyledTag,{disabled:i,children:[s&&o==="left"&&jsxRuntimeExports.jsx(Icon,{width:"16px",fill:"currentColor",Icon:s}),jsxRuntimeExports.jsx(Label,{size:"xs",$font:"Work Sans",$weight:500,$uppercase:!0,children:e}),s&&o==="right"&&jsxRuntimeExports.jsx(Icon,{width:"16px",fill:"currentColor",Icon:s})]}),StyledFilter=st.div`
   width: 345px;
-  padding: 16px 24px;
   border: 1px solid ${Colors.neutral900};
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(16px);
@@ -1224,13 +1223,14 @@ Error generating stack: `+c.message+`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 16px 24px;
 
   ${StyledIcon} {
     transition: transform 0.3s;
     transform: rotate(${({$open:e})=>e?"-180deg":"0deg"});
   }
 `,StyledFilterBody=st.div`
-  margin-top: 24px;
+  padding: 0 24px 24px;
 
   display: flex;
   flex-direction: column;
