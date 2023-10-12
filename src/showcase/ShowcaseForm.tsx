@@ -1,4 +1,5 @@
 import { useState } from "react";
+import customIconUrl from "../assets/icons/minus.svg";
 import {
   Checkbox,
   CheckboxGroup,
@@ -7,9 +8,10 @@ import { Input } from "../commons/FormComponents/Input/Input";
 import { Select } from "../commons/FormComponents/Select/Select";
 import { TextArea } from "../commons/FormComponents/TextArea/TextArea";
 import { Section } from "../commons/Section";
+import { Tag } from "../commons/Tag";
 import { Flex } from "../commons/Theme";
+import { ArrowRight } from "../components/Icons/ArrowRight";
 import { Plus } from "../components/Icons/Plus";
-import customIconUrl from "../assets/icons/minus.svg";
 
 const options = [
   "Orange",
@@ -35,6 +37,19 @@ export const ShowcaseForm = () => {
     <>
       <Section $defaultPadding>
         <h1>Showcase: Form components</h1>
+        <Flex style={{ marginBottom: "40px" }} $gap={24}>
+          <Tag label="tag" />
+          <Tag label="tag" disabled />
+          <Tag label="tag" CustomIcon={ArrowRight} />
+          <Tag label="tag" disabled CustomIcon={ArrowRight} />
+          <Tag label="tag" CustomIcon={ArrowRight} iconPosition="left" />
+          <Tag
+            label="tag"
+            disabled
+            CustomIcon={ArrowRight}
+            iconPosition="left"
+          />
+        </Flex>
         <Flex $gap={40}>
           <Flex direction="column" $gap={24}>
             <CheckboxGroup

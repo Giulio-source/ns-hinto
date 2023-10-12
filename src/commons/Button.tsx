@@ -15,6 +15,11 @@ export const StyledButton = styled.button<StyledButtonProps & { as: string }>`
   transition: all 0.3s;
   text-decoration: none;
 
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0px 0px 0px 3px ${Colors.blue100};
+  }
+
   ${({ size }) => {
     if (size === "s") {
       return css`
