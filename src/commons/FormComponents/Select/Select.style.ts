@@ -4,13 +4,17 @@ import { Theme } from "../../Section";
 import { BodyS_Narrow_CSS, Colors } from "../../Theme";
 
 export const StyledSelectIcon = styled.div`
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 30px;
   right: 22px;
   transform: translate(0, -50%);
   pointer-events: none;
   z-index: 1;
+
+  @media (hover: hover) {
+    opacity: 0;
+  }
 `;
 
 export const StyledSelect = styled.select<{
@@ -24,7 +28,6 @@ export const StyledSelect = styled.select<{
   align-items: center;
   padding: 16px 20px;
   appearance: none;
-  opacity: 0;
 
   width: 100%;
   cursor: pointer;
@@ -111,6 +114,10 @@ export const StyledSelect = styled.select<{
         }
       `};
     `};
+
+  @media (hover: hover) {
+    opacity: 0;
+  }
 `;
 
 export const StyledSelectWrapper = styled.div<{ theme: Theme }>`
@@ -302,7 +309,7 @@ export const StyledDropdownWrapper = styled.div<{ theme: Theme }>`
 
   select:focus + ${StyledCustomSelect} {
     display: none;
-  } 
+  }
 
   ${({ theme }) =>
     theme === "dark" &&
