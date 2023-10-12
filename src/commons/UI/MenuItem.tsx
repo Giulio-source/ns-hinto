@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { BodyS_Narrow_CSS, Colors } from "../Theme";
 
-const StyledMenuItemDropdown = styled.div`
+const StyledMenuDropdown = styled.div`
   position: absolute;
   z-index: 1;
   top: 100%;
   left: 0;
-  display: none;
+  transition: clip-path 0.3s ease-in-out;
+  clip-path: polygon(0 0, 100% 0%, 100% 0%, 0 0%);
 
   background: white;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08),
@@ -34,8 +35,13 @@ const StyledMenuItemWrapper = styled.div`
   }
 
   &:hover {
-    ${StyledMenuItemDropdown} {
-      display: block;
+    ${StyledMenuDropdown} {
+      clip-path: polygon(
+        -16px -16px,
+        calc(100% + 16px) -16px,
+        calc(100% + 16px) calc(100% + 16px),
+        -16px calc(100% + 16px)
+      );
     }
     ${StyledMenuItem} {
       span::before {
@@ -98,7 +104,7 @@ export const MenuItem = ({ label, url, options }: MenuItemProps) => {
         </StyledMenuItem>
       </a>
       {options && (
-        <StyledMenuItemDropdown>
+        <StyledMenuDropdown>
           {options?.map((opt) => (
             <a key={opt.label} href={opt.url}>
               <StyledMenuItemChild>
@@ -108,7 +114,7 @@ export const MenuItem = ({ label, url, options }: MenuItemProps) => {
               </StyledMenuItemChild>
             </a>
           ))}
-        </StyledMenuItemDropdown>
+        </StyledMenuDropdown>
       )}
     </StyledMenuItemWrapper>
   );
