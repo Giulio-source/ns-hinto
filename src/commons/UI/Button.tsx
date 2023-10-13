@@ -205,7 +205,7 @@ export const Button = ({
       href={href}
       as={href ? "a" : "button"}
     >
-      <Flex $gap={8}>
+      <Flex $gap={8} wrap="nowrap">
         {CustomIcon && iconPosition === "left" && (
           <Icon
             Icon={CustomIcon}

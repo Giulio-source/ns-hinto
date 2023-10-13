@@ -6,16 +6,18 @@ import { ShowcaseGrid } from "./showcase/Grid";
 import { ShowcaseIcons } from "./showcase/Icons";
 import { ShowcaseLogos } from "./showcase/Logos";
 import { ShowcasePalette } from "./showcase/Palette";
+import { SezioneContattaci } from "./showcase/SezioneContattaci";
+import { ShowcaseAccordionContattaci } from "./showcase/ShowcaseAccordionContattaci";
 import { ShowcaseForm } from "./showcase/ShowcaseForm";
 import { ShowcaseHero } from "./showcase/ShowcaseHero";
 import { ShowcaseTypography } from "./showcase/Typography";
-import {SezioneContattaci} from './showcase/SezioneContattaci';
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <Header />
+      <ShowcaseAccordionContattaci />
       <SezioneContattaci />
       <ShowcaseForm />
       <ShowcaseHero />
