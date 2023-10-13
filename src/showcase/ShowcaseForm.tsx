@@ -4,15 +4,12 @@ import {
   Checkbox,
   CheckboxGroup,
 } from "../commons/FormComponents/Checkbox/Checkbox";
-import { Input } from "../commons/FormComponents/Input/Input";
 import { Select } from "../commons/FormComponents/Select/Select";
-import { TextArea } from "../commons/FormComponents/TextArea/TextArea";
 import { Section } from "../commons/Section";
 import { Flex } from "../commons/Theme";
 import { Tag } from "../commons/UI/Tag";
 import { Filter } from "../components/Filter/Filter";
 import { ArrowRight } from "../components/Icons/ArrowRight";
-import { Plus } from "../components/Icons/Plus";
 
 const options = [
   "Orange",
@@ -27,12 +24,12 @@ const options = [
 ];
 
 export const ShowcaseForm = () => {
-  const [textArea1, setTextArea1] = useState<string>("");
-  const [textArea2, setTextArea2] = useState<string>("");
-  const [textArea3, setTextArea3] = useState<string>("");
-  const [textArea4, setTextArea4] = useState<string>("");
-  const [select1, setSelect1] = useState<string>("");
-  const [select2, setSelect2] = useState<string>("");
+  // const [textArea1, setTextArea1] = useState<string>("");
+  // const [textArea2, setTextArea2] = useState<string>("");
+  // const [textArea3, setTextArea3] = useState<string>("");
+  // const [textArea4, setTextArea4] = useState<string>("");
+  // const [select1, setSelect1] = useState<string>("");
+  // const [select2, setSelect2] = useState<string>("");
   const [select3, setSelect3] = useState<string>("");
   const [select4, setSelect4] = useState<string>("");
 
@@ -85,7 +82,6 @@ export const ShowcaseForm = () => {
               {options.map((opt, i) => (
                 <Checkbox
                   key={`checkbox-${opt}`}
-                  id={`checkbox-${opt}`}
                   label={opt}
                   onChange={() => {}}
                   disabled={i > 3}
@@ -100,7 +96,6 @@ export const ShowcaseForm = () => {
               {options.map((opt, i) => (
                 <Checkbox
                   key={`checkbox2-${opt}`}
-                  id={`checkbox2-${opt}`}
                   label={opt}
                   onChange={() => {}}
                   disabled={i > 3}
@@ -117,7 +112,6 @@ export const ShowcaseForm = () => {
               {options.map((opt, i) => (
                 <Checkbox
                   key={`checkbox3-${opt}`}
-                  id={`checkbox3-${opt}`}
                   label={opt}
                   onChange={() => {}}
                   disabled={i > 3}
@@ -133,7 +127,6 @@ export const ShowcaseForm = () => {
               {options.map((opt, i) => (
                 <Checkbox
                   key={`checkbox4-${opt}`}
-                  id={`checkbox4-${opt}`}
                   label={opt}
                   onChange={() => {}}
                   disabled={i > 3}
