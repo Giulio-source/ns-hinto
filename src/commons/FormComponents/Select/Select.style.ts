@@ -209,7 +209,7 @@ export const StyledCustomDropdownLabel = styled.div<{
     css`
       background: rgba(237, 235, 255, 0.5);
       border-color: ${Colors.blue50};          
-       color: ${Colors.neutral900};
+      color: ${Colors.neutral900};
       &:hover {
         border-color: ${Colors.blue100};
       }
