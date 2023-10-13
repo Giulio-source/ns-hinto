@@ -6,10 +6,16 @@ import { TextArea } from "../../commons/FormComponents/TextArea/TextArea";
 import { Body, Flex } from "../../commons/Theme";
 import { Button } from "../../commons/UI/Button";
 import {
+  isValidEmail,
+  isValidName,
+  isValidTelephone,
+} from "../../commons/utils";
+import {
   StyledFormContattaci,
   StyledPrivacy,
   StyledTwoCols,
 } from "./FormContattaci.style";
+import { FormErrors } from "./FormContattaci.types";
 
 const motiviOptions = [
   "Sono interessato",
@@ -26,6 +32,7 @@ export const FormContattaci = () => {
   const [messaggio, setMessaggio] = useState<string>("");
   const [datiPersonali, setDatiPersonali] = useState<boolean>(false);
   const [newsletter, setNewsletter] = useState<boolean>(false);
+  const [formErrors, setFormErrors] = useState<FormErrors>({});
 
   function onSubmit() {
     console.table({
@@ -47,6 +54,15 @@ export const FormContattaci = () => {
         placeholder="Es. Mario Rossi"
         value={nome}
         onChange={(e) => setNome(e.target.value)}
+        errorMessage={formErrors.nome}
+        onBlur={() => {
+          const error = !nome
+            ? "Campo obbligatorio"
+            : !isValidName(nome)
+            ? "Nome e cognome errato"
+            : "";
+          setFormErrors((prev) => ({ ...prev, nome: error }));
+        }}
         required
       />
       <StyledTwoCols>
@@ -56,6 +72,15 @@ export const FormContattaci = () => {
           placeholder="La tua email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          errorMessage={formErrors.email}
+          onBlur={() => {
+            const error = !email
+              ? "Campo obbligatorio"
+              : !isValidEmail(email)
+              ? "Email errata"
+              : "";
+            setFormErrors((prev) => ({ ...prev, email: error }));
+          }}
           required
         />
         <Input
@@ -64,6 +89,15 @@ export const FormContattaci = () => {
           placeholder="Il tuo numero di cellulare"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
+          errorMessage={formErrors.phone}
+          onBlur={() => {
+            const error = !phone
+              ? "Campo obbligatorio"
+              : !isValidTelephone(phone)
+              ? "Telefono errato"
+              : "";
+            setFormErrors((prev) => ({ ...prev, phone: error }));
+          }}
           required
         />
       </StyledTwoCols>
@@ -72,6 +106,11 @@ export const FormContattaci = () => {
         placeholder="La tua azienda"
         value={azienda}
         onChange={(e) => setAzienda(e.target.value)}
+        errorMessage={formErrors.azienda}
+        onBlur={() => {
+          const error = !azienda ? "Campo obbligatorio" : "";
+          setFormErrors((prev) => ({ ...prev, azienda: error }));
+        }}
         required
       />
       <Select
@@ -80,6 +119,14 @@ export const FormContattaci = () => {
         required
         value={motivo}
         onChange={setMotivo}
+        errorMessage={formErrors.motivo}
+        onBlur={() => {
+          const error = !motivo
+            ? "Campo obbligatorio"
+            : "";
+          setFormErrors((prev) => ({ ...prev, motivo: error }));
+        }}
+        onFocus={() => setFormErrors((prev) => ({ ...prev, motivo: "" }))}
       />
       <TextArea
         label="messaggio"
@@ -87,6 +134,11 @@ export const FormContattaci = () => {
         required
         value={messaggio}
         onChange={(e) => setMessaggio(e.target.value)}
+        errorMessage={formErrors.messaggio}
+        onBlur={() => {
+          const error = !messaggio ? "Campo obbligatorio" : "";
+          setFormErrors((prev) => ({ ...prev, messaggio: error }));
+        }}
       />
       <Flex direction="column" $gap={8}>
         <Checkbox
@@ -146,7 +198,7 @@ export const FormContattaci = () => {
             motivo &&
             messaggio &&
             datiPersonali
-          )
+          ) || Object.values(formErrors).filter((x) => x).length > 0
         }
       />
     </StyledFormContattaci>

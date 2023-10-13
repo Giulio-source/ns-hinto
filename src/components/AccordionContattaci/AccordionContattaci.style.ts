@@ -3,22 +3,15 @@ import { Colors, DesktopBR, Grid } from "../../commons/Theme";
 
 export const StyledAccordionContattaci = styled.div<{
   $open: boolean;
-  $maxHeight: number;
+  $maxHeight: number | string;
 }>`
   width: 100vw;
   transform: translate(-16px);
   position: relative;
   overflow: hidden;
-  transition: all 1s;
-  max-height: ${({ $maxHeight }) => `${$maxHeight + 28}px`};
-
-  @media screen and (min-width: ${DesktopBR}) {
-    width: 100%;
-
-    &::before {
-      width: calc(100% - 28px);
-    }
-  }
+  transition: all 0.5s;
+  max-height: ${({ $maxHeight }) =>
+    typeof $maxHeight === "number" ? `${$maxHeight + 28}px` : $maxHeight};
 
   &::before {
     content: "";
@@ -32,14 +25,32 @@ export const StyledAccordionContattaci = styled.div<{
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(4px);
     z-index: -1;
-    transition: all 1s;
-    max-height: ${({ $maxHeight }) => `${$maxHeight}px`};
+    transition: all 0.5s;
+    max-height: ${({ $maxHeight }) =>
+      typeof $maxHeight === "number" ? `${$maxHeight}px` : $maxHeight};
 
     ${({ $open }) =>
       $open &&
       css`
+        top: 0;
         width: 100%;
       `};
+  }
+
+  @media screen and (min-width: ${DesktopBR}) {
+    width: 100%;
+    transition: all 1s;
+
+    &::before {
+      transition: all 1s;
+      width: calc(100% - 28px);
+      ${({ $open }) =>
+        $open &&
+        css`
+          top: 0;
+          width: 100%;
+        `};
+    }
   }
 `;
 

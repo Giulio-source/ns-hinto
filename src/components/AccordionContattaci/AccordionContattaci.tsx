@@ -17,11 +17,14 @@ export const AccordionContattaci = ({
   label,
   children,
 }: AccordionContattaciProps) => {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>();
   const [headerHeight, setHeaderHeight] = useState<number>(
     DEFAULT_HEADER_HEIGHT
   );
   const [bodyHeight, setBodyHeight] = useState<number>(DEFAULT_BODY_HEIGHT);
+  const [maxHeight, setMaxHeight] = useState<number | string>(
+    DEFAULT_HEADER_HEIGHT
+  );
   const headerRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
 
@@ -42,12 +45,27 @@ export const AccordionContattaci = ({
     return () => window.removeEventListener("resize", measureComponent);
   }, []);
 
+  useEffect(() => {
+    if (typeof open !== "boolean") return;
+    if (open) {
+      setMaxHeight(headerHeight + bodyHeight - 28);
+      setTimeout(() => {
+        setMaxHeight("none");
+      }, 200);
+    } else {
+      setMaxHeight(headerHeight + bodyHeight - 28);
+      setTimeout(() => {
+        setMaxHeight(headerHeight);
+      }, 200);
+    }
+  }, [open]);
+
   return (
     <StyledAccordionContattaci
-      $open={open}
-      $maxHeight={open ? headerHeight + bodyHeight - 28 : headerHeight}
+      $open={!!open}
+      $maxHeight={typeof open !== "boolean" ? headerHeight : maxHeight}
     >
-      <StyledAccordionHeaderGrid $open={open} ref={headerRef}>
+      <StyledAccordionHeaderGrid $open={!!open} ref={headerRef}>
         <StyledAccordionContattaciHeader>
           <Body size="l">{label}</Body>
           <Button

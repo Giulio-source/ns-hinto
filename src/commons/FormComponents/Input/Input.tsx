@@ -16,6 +16,8 @@ import { InputProps } from "./Input.types";
 export const Input = ({
   value,
   onChange,
+  onBlur,
+  onFocus,
   placeholder,
   description,
   label,
@@ -55,6 +57,8 @@ export const Input = ({
           disabled={disabled}
           required={required}
           type={type}
+          onBlur={onBlur}
+          onFocus={onFocus}
         />
         {CustomIcon && (
           <StyledInputRightIcon>

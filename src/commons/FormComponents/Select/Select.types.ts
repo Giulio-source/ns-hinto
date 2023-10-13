@@ -8,6 +8,8 @@ export type SelectProps = {
   CustomIcon?: FC;
   value?: string;
   onChange?: (value: string) => void;
+  onBlur?: () => void;
+  onFocus?: () => void;
   options: string[];
   disabled?: boolean;
   theme?: Theme;

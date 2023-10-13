@@ -4,7 +4,12 @@ import { Check } from "../../../components/Icons/Check";
 import { ChevronDown } from "../../../components/Icons/ChevronDown";
 import { Icon } from "../../../components/Icons/Icon";
 import { Colors } from "../../Theme";
-import {StyledInputError, StyledInputHelp, StyledInputLabel, StyledRedSpan} from '../Input/Input.style';
+import {
+  StyledInputError,
+  StyledInputHelp,
+  StyledInputLabel,
+  StyledRedSpan,
+} from "../Input/Input.style";
 import {
   StyledCustomDropdown,
   StyledCustomDropdownItem,
@@ -28,11 +33,14 @@ export const Select = ({
   options,
   value,
   onChange,
+  onBlur,
+  onFocus,
   disabled = false,
   theme = "light",
   required,
 }: SelectProps) => {
-  const [showDropdown, setShowDropdown] = useState<boolean>(false);
+  const [showDropdown, setShowDropdown] = useState<boolean>();
+  const [openedOnce, setOpenedOnce] = useState<boolean>(false);
   const selectRef = useRef<HTMLDivElement>(null);
   const selectId = useId();
 
@@ -48,6 +56,19 @@ export const Select = ({
     };
   }, []);
 
+  useEffect(() => {
+    if (
+      typeof showDropdown === "boolean" &&
+      showDropdown === false &&
+      openedOnce === true
+    ) {
+      onBlur && onBlur();
+    }
+    if (showDropdown === true) {
+      setOpenedOnce(true);
+    }
+  }, [showDropdown]);
+
   return (
     <StyledSelectWrapper>
       {label && (
@@ -60,6 +81,8 @@ export const Select = ({
         <StyledSelect
           value={value}
           onChange={(e) => onChange && onChange(e.target.value)}
+          onBlur={onBlur}
+          onFocus={onFocus}
           $hasError={!!errorMessage}
           aria-labelledby={selectId}
           disabled={disabled}
@@ -79,7 +102,7 @@ export const Select = ({
           <StyledCustomDropdownLabel
             value={!!value}
             $hasError={!!errorMessage}
-            $showDropdown={showDropdown}
+            $showDropdown={!!showDropdown}
             disabled={disabled}
             theme={theme}
             onClick={() => !disabled && setShowDropdown((prev) => !prev)}

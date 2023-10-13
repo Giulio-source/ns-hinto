@@ -23,6 +23,7 @@ export const TextArea = ({
   placeholder,
   disabled,
   required,
+  ...rest
 }: TextAreaProps) => {
   const textareaId = useId();
   return (
@@ -44,6 +45,7 @@ export const TextArea = ({
         $hasError={!!errorMessage}
         disabled={disabled}
         required={required}
+        {...rest}
       />
       {errorMessage && (
         <StyledInputError>
