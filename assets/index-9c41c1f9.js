@@ -1213,11 +1213,19 @@ Error generating stack: `+c.message+`
   transition: max-height 0.5s;
   max-height: ${({$open:e,$maxHeight:i})=>e?`${i}px`:"58px"};
   overflow: ${({$showOverflow:e})=>e?"visible":"hidden"};
-`,StyledFilterHeader=st.div`
+`,StyledFilterHeader=st.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
+  width: 100%;
+  background: white;
+  border: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline-color: ${Colors.blue400};
+  }
 
   ${StyledIcon} {
     transition: transform 0.3s;
@@ -1225,7 +1233,6 @@ Error generating stack: `+c.message+`
   }
 `,StyledFilterBody=st.div`
   padding: 0 24px 24px;
-
   display: flex;
   flex-direction: column;
   gap: 24px;
