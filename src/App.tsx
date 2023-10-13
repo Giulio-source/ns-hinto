@@ -9,12 +9,14 @@ import { ShowcasePalette } from "./showcase/Palette";
 import { ShowcaseForm } from "./showcase/ShowcaseForm";
 import { ShowcaseHero } from "./showcase/ShowcaseHero";
 import { ShowcaseTypography } from "./showcase/Typography";
+import {SezioneContattaci} from './showcase/SezioneContattaci';
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <Header />
+      <SezioneContattaci />
       <ShowcaseForm />
       <ShowcaseHero />
       <ShowcasePalette />

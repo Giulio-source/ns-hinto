@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { BodyS_Narrow_CSS, Colors, LabelS_CSS } from "../../Theme";
 import { Theme } from "../../Section";
+import { BodyS_Narrow_CSS, Colors, LabelS_CSS } from "../../Theme";
 
 export const StyledInput = styled.input<{
   $hasError: boolean;
   $hasIcon: boolean;
 }>`
+  width: 100%;
   padding: ${({ $hasIcon }) => ($hasIcon ? "16px 44px" : "16px 20px")};
   border: 2px solid
     ${({ $hasError }) => ($hasError ? Colors.magenta400 : Colors.neutral100)};
@@ -97,4 +98,8 @@ export const StyledInputRightIcon = styled.div`
   right: 20px;
   z-index: 1;
   transform: translate(0, -50%);
+`;
+
+export const StyledRedSpan = styled.span`
+  color: ${Colors.magenta400};
 `;

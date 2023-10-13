@@ -39,7 +39,7 @@ export const ShowcaseForm = () => {
   return (
     <>
       <Section $defaultPadding>
-        <h1 style={{ marginTop: "40px" }}>Showcase: Form components</h1>
+        <h1>Showcase: Form components</h1>
         <Flex style={{ marginBottom: "40px" }} $gap={24}>
           <Filter
             activeFilters={[select3, select4]}
@@ -48,14 +48,12 @@ export const ShowcaseForm = () => {
             filters={
               <>
                 <Select
-                  id="select-competenza"
                   label="competenza"
                   options={["Drupal", "React", "Gatsby"]}
                   value={select3}
                   onChange={setSelect3}
                 />
                 <Select
-                  id="select-stato-evento"
                   label="stato dell'evento"
                   options={["In corso", "Fatto", "Testing"]}
                   value={select4}
@@ -145,10 +143,9 @@ export const ShowcaseForm = () => {
               ))}
             </CheckboxGroup>
           </Flex>
-          <Select
+          {/* <Select
             label="Select regular"
             description="Help text"
-            id="fruit-select"
             options={options}
             value={select1}
             onChange={(value) => setSelect1(value)}
@@ -156,7 +153,6 @@ export const ShowcaseForm = () => {
           <Select
             label="Select with error"
             errorMessage="Error message"
-            id="fruit-select2"
             options={options}
             value={select2}
             onChange={(value) => setSelect2(value)}
@@ -164,7 +160,6 @@ export const ShowcaseForm = () => {
           <Select
             label="Select disabled"
             description="Help text"
-            id="fruit-select2"
             options={options}
             disabled
             // value={select1}
@@ -173,7 +168,6 @@ export const ShowcaseForm = () => {
           <Select
             label="Select disabled"
             description="Help text"
-            id="fruit-select2"
             options={options}
             disabled
             value={"Orange"}
@@ -203,14 +197,12 @@ export const ShowcaseForm = () => {
             CustomIcon={Plus}
           />
           <TextArea
-            id="textarea1"
             label="textarea normal"
             placeholder="Placeholder"
             value={textArea1}
             onChange={(e) => setTextArea1(e.target.value)}
           />
           <TextArea
-            id="textarea2"
             label="textarea with help"
             placeholder="Placeholder"
             description="Help text"
@@ -218,7 +210,6 @@ export const ShowcaseForm = () => {
             onChange={(e) => setTextArea2(e.target.value)}
           />
           <TextArea
-            id="textarea3"
             label="textarea with error"
             placeholder="Placeholder"
             errorMessage="Error message"
@@ -226,23 +217,21 @@ export const ShowcaseForm = () => {
             onChange={(e) => setTextArea3(e.target.value)}
           />
           <TextArea
-            id="textarea4"
             label="textarea disabled"
             placeholder="Placeholder"
             disabled
             value={textArea4}
             onChange={(e) => setTextArea4(e.target.value)}
-          />
+          /> */}
         </Flex>
       </Section>
-      <Section theme="dark" $defaultPadding>
+      {/* <Section theme="dark" $defaultPadding>
         <h1>Showcase: Dark selects</h1>
         <Flex $gap={40}>
           <Select
             theme="dark"
             label="Select regular"
             description="Help text"
-            id="fruit-select"
             options={options}
             value={select1}
             onChange={(value) => setSelect1(value)}
@@ -251,7 +240,6 @@ export const ShowcaseForm = () => {
             theme="dark"
             label="Select with error"
             errorMessage="Error message"
-            id="fruit-select2"
             options={options}
             value={select2}
             onChange={(value) => setSelect2(value)}
@@ -260,7 +248,6 @@ export const ShowcaseForm = () => {
             theme="dark"
             label="Select disabled"
             description="Help text"
-            id="fruit-select3"
             options={options}
             disabled
             // value={select1}
@@ -270,14 +257,13 @@ export const ShowcaseForm = () => {
             theme="dark"
             label="Select disabled"
             description="Help text"
-            id="fruit-select4"
             options={options}
             disabled
             value={"Orange"}
             // onChange={(value) => setSelect1(value)}
           />
         </Flex>
-      </Section>
+      </Section> */}
     </>
   );
 };

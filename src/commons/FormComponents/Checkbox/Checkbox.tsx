@@ -1,5 +1,9 @@
-import { useEffect, useState } from "react";
-import { StyledInputHelp, StyledInputLabel } from "../Input/Input.style";
+import { useEffect, useId, useState } from "react";
+import {
+  StyledInputHelp,
+  StyledInputLabel,
+  StyledRedSpan,
+} from "../Input/Input.style";
 import {
   StyledCheckbox,
   StyledCheckboxGroup,
@@ -10,14 +14,15 @@ import {
 import { CheckboxGroupProps, CheckboxProps } from "./Checkbox.types";
 
 export const Checkbox = ({
-  id,
   label,
   disabled = false,
   defaultValue = false,
   onChange,
   customIconUrl,
+  required = false,
 }: CheckboxProps) => {
   const [checked, setChecked] = useState<boolean>(defaultValue);
+  const checkboxId = useId();
 
   useEffect(() => {
     onChange(checked);
@@ -26,15 +31,16 @@ export const Checkbox = ({
   return (
     <StyledSingleCheckboxWrapper>
       <StyledCheckbox
-        id={id}
+        id={checkboxId}
         type="checkbox"
         disabled={disabled}
         checked={checked}
         onChange={() => setChecked((prev) => !prev)}
         $customIconUrl={customIconUrl}
       />
-      <StyledCheckboxLabel htmlFor={id} disabled={disabled}>
+      <StyledCheckboxLabel htmlFor={checkboxId} disabled={disabled}>
         {label}
+        {required && <StyledRedSpan>*</StyledRedSpan>}
       </StyledCheckboxLabel>
     </StyledSingleCheckboxWrapper>
   );

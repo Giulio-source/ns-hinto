@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Theme } from "../../Section";
 
 export type SelectProps = {
-  id: string;
   description?: string;
   label?: string;
   errorMessage?: string;
@@ -12,4 +11,5 @@ export type SelectProps = {
   options: string[];
   disabled?: boolean;
   theme?: Theme;
+  required?: boolean;
 };

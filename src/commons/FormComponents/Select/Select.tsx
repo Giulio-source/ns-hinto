@@ -1,14 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Alert } from "../../../components/Icons/Alert";
 import { Check } from "../../../components/Icons/Check";
 import { ChevronDown } from "../../../components/Icons/ChevronDown";
 import { Icon } from "../../../components/Icons/Icon";
 import { Colors } from "../../Theme";
-import {
-  StyledInputError,
-  StyledInputHelp,
-  StyledInputLabel,
-} from "../Input/Input.style";
+import {StyledInputError, StyledInputHelp, StyledInputLabel, StyledRedSpan} from '../Input/Input.style';
 import {
   StyledCustomDropdown,
   StyledCustomDropdownItem,
@@ -23,8 +19,9 @@ import { SelectProps } from "./Select.types";
 
 // Took this approach for accessibility: https://css-tricks.com/striking-a-balance-between-native-and-custom-select-elements/
 
+const SELECT_DEFAULT = "Seleziona...";
+
 export const Select = ({
-  id,
   label,
   errorMessage,
   description,
@@ -33,9 +30,11 @@ export const Select = ({
   onChange,
   disabled = false,
   theme = "light",
+  required,
 }: SelectProps) => {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const selectRef = useRef<HTMLDivElement>(null);
+  const selectId = useId();
 
   useEffect(() => {
     function handleClickOut(e: MouseEvent) {
@@ -52,8 +51,9 @@ export const Select = ({
   return (
     <StyledSelectWrapper>
       {label && (
-        <StyledInputLabel as="div" id={id}>
+        <StyledInputLabel as="div" id={selectId}>
           {label}
+          {required && <StyledRedSpan>*</StyledRedSpan>}
         </StyledInputLabel>
       )}
       <StyledDropdownWrapper theme={theme}>
@@ -61,12 +61,13 @@ export const Select = ({
           value={value}
           onChange={(e) => onChange && onChange(e.target.value)}
           $hasError={!!errorMessage}
-          aria-labelledby={id}
+          aria-labelledby={selectId}
           disabled={disabled}
           theme={theme}
+          required={required}
         >
           <option value="" disabled>
-            Select...
+            {SELECT_DEFAULT}
           </option>
           {options.map((opt) => (
             <option key={opt} value={opt}>
@@ -83,7 +84,7 @@ export const Select = ({
             theme={theme}
             onClick={() => !disabled && setShowDropdown((prev) => !prev)}
           >
-            {value || "Select..."}
+            {value || SELECT_DEFAULT}
             <Icon
               Icon={ChevronDown}
               width="16px"

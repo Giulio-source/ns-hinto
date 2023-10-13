@@ -5,6 +5,5 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   errorMessage?: string;
   CustomIcon?: FC;
-  value?: string
-  onChange?: () => void
+  value?: string;
 };

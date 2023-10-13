@@ -1,3 +1,4 @@
+import { useId } from "react";
 import { Alert } from "../../../components/Icons/Alert";
 import { Icon } from "../../../components/Icons/Icon";
 import { Colors } from "../../Theme";
@@ -9,6 +10,7 @@ import {
   StyledInputLeftIcon,
   StyledInputRightIcon,
   StyledInputWrapper,
+  StyledRedSpan,
 } from "./Input.style";
 import { InputProps } from "./Input.types";
 export const Input = ({
@@ -20,10 +22,19 @@ export const Input = ({
   errorMessage,
   disabled,
   CustomIcon,
+  required,
+  type = "text",
 }: InputProps) => {
+  const inputId = useId();
+
   return (
     <StyledInputWrapper>
-      {label && <StyledInputLabel>{label}</StyledInputLabel>}
+      {label && (
+        <StyledInputLabel htmlFor={inputId}>
+          {label}
+          {required && <StyledRedSpan>*</StyledRedSpan>}
+        </StyledInputLabel>
+      )}
       <div style={{ position: "relative" }}>
         {CustomIcon && (
           <StyledInputLeftIcon>
@@ -35,12 +46,15 @@ export const Input = ({
           </StyledInputLeftIcon>
         )}
         <StyledInput
+          id={inputId}
           value={value}
           onChange={onChange}
           placeholder={placeholder}
           $hasError={!!errorMessage}
           $hasIcon={!!CustomIcon}
           disabled={disabled}
+          required={required}
+          type={type}
         />
         {CustomIcon && (
           <StyledInputRightIcon>

@@ -62,6 +62,7 @@ export const StyledSelect = styled.select<{
             ? "rgba(245, 245, 245, 0.5)"
             : "rgba(237, 235, 255, 0.5)"};
           border-color: ${$hasError ? Colors.magenta400 : Colors.blue50};
+          color: ${Colors.neutral900};
         `
       : css`
           color: ${Colors.neutral400};
@@ -120,10 +121,7 @@ export const StyledSelect = styled.select<{
   }
 `;
 
-export const StyledSelectWrapper = styled.div<{ theme: Theme }>`
-  width: 100%;
-  max-width: 320px;
-`;
+export const StyledSelectWrapper = styled.div``;
 
 export const StyledCustomSelect = styled.div`
   display: none;
@@ -210,7 +208,8 @@ export const StyledCustomDropdownLabel = styled.div<{
     value &&
     css`
       background: rgba(237, 235, 255, 0.5);
-      border-color: ${Colors.blue50};
+      border-color: ${Colors.blue50};          
+       color: ${Colors.neutral900};
       &:hover {
         border-color: ${Colors.blue100};
       }

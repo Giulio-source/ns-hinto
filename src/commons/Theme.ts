@@ -394,3 +394,36 @@ export const LabelS_CSS = css`
     line-height: 20px;
   } */
 `;
+
+export const WhiteBlur_CSS = css`
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(100vw, calc(100% + 64px));
+    height: calc(100% + 64px);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: -1;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+export const StyledScrollbar = css`
+  scrollbar-width: 4px;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${Colors.neutral100};
+    border-radius: 999px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${Colors.neutral50};
+  }
+`;

@@ -29,14 +29,14 @@ export const Header = () => {
   return (
     <StyledHeader>
       <StyledSectionContent>
-        <Flex $alignItems="center" $gap={8} wrap="nowrap">
+        <Flex $alignItems="center" $gap={64} wrap="nowrap">
           <Icon
             Icon={MainLogo}
             width="160px"
             $desktopWidth="200px"
             fill="currentColor"
           />
-          <Flex $gap={8}>
+          <Flex $gap={24}>
             <MenuItem label={menuOptions3.label} url={menuOptions3.url} />
             <MenuItem
               label={menuOptions.label}

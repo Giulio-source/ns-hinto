@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BodyS_Narrow_CSS, Colors } from "../../Theme";
+import {BodyS_Narrow_CSS, Colors, StyledScrollbar} from '../../Theme';
 
 export const StyledTextArea = styled.textarea<{
   $hasError: boolean;
@@ -14,6 +14,8 @@ export const StyledTextArea = styled.textarea<{
   backdrop-filter: blur(16px);
   outline: none;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  resize: none;
+  ${StyledScrollbar}
 
   ${BodyS_Narrow_CSS};
 

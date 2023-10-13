@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { ChevronDown } from "../../components/Icons/ChevronDown";
+import { Icon } from "../../components/Icons/Icon";
 import { BodyS_Narrow_CSS, Colors, DesktopBR } from "../Theme";
 
 const StyledMenuDropdown = styled.div`
@@ -10,7 +12,6 @@ const StyledMenuDropdown = styled.div`
   transition: clip-path 0.3s ease-in-out;
   clip-path: polygon(0 0, 100% 0%, 100% 0%, 0 0%);
 
-  background: white;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08),
     0px 8px 16px 0px rgba(0, 0, 0, 0.04);
 `;
@@ -18,10 +19,9 @@ const StyledMenuDropdown = styled.div`
 const StyledMenuItem = styled.div`
   display: flex;
   align-items: center;
-  background: white;
 
   height: 48px;
-  padding: 12px 16px;
+  padding: 12px 8px;
 
   cursor: pointer;
 `;
@@ -57,7 +57,10 @@ const StyledMenuItemWrapper = styled.div`
 `;
 
 const StyledMenuSpan = styled.span<{ $isActive: boolean }>`
+  display: flex;
+  gap: 4px;
   text-decoration: none;
+  text-transform: uppercase;
   ${BodyS_Narrow_CSS}
   position: relative;
   width: fit-content;
@@ -105,7 +108,12 @@ export const MenuItem = ({ label, url, options }: MenuItemProps) => {
     <StyledMenuItemWrapper>
       <a href={url}>
         <StyledMenuItem>
-          <StyledMenuSpan $isActive={url === pathname}>{label}</StyledMenuSpan>
+          <StyledMenuSpan $isActive={url === pathname}>
+            {label}
+            {options && (
+              <Icon width="16px" fill="currentColor" Icon={ChevronDown} />
+            )}
+          </StyledMenuSpan>
         </StyledMenuItem>
       </a>
       {options && (
