@@ -1462,6 +1462,7 @@ Error generating stack: `+c.message+`
   overflow: ${({$showOverflow:e})=>e?"visible":"hidden"};
 `,StyledFilterHeader=st.button`
   display: flex;
+  color: ${Colors.neutral900};
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
