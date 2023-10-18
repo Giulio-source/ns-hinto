@@ -10,6 +10,7 @@ import { SezioneContattaci } from "./showcase/SezioneContattaci";
 import { ShowcaseAccordionContattaci } from "./showcase/ShowcaseAccordionContattaci";
 import { ShowcaseForm } from "./showcase/ShowcaseForm";
 import { ShowcaseHero } from "./showcase/ShowcaseHero";
+import { ShowcasePeople } from "./showcase/ShowcasePeople";
 import { ShowcaseTypography } from "./showcase/Typography";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <>
       <GlobalStyle />
       <Header />
+      <ShowcasePeople />
       <ShowcaseAccordionContattaci />
       <SezioneContattaci />
       <ShowcaseForm />
