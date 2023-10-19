@@ -57,7 +57,7 @@ export const StyledSection = styled.div<Pick<SectionProps, "theme">>`
 `;
 
 export const StyledSectionContent = styled.div<{
-  $defaultPadding: boolean;
+  $defaultPadding?: boolean;
   $spaceTopMobile?: string;
   $spaceTopDesktop?: string;
 }>`
