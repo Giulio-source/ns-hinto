@@ -138,7 +138,7 @@ export const StyledCustomSelect = styled.div`
 export const StyledCustomDropdown = styled.div`
   width: 100%;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: calc(100% + 8px);
   max-height: 320px;
   overflow-y: auto;

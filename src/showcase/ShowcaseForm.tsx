@@ -35,8 +35,7 @@ export const ShowcaseForm = () => {
 
   return (
     <>
-      <Section $defaultPadding>
-        <h1>Showcase: Form components</h1>
+      <Section $defaultPadding title="Form components">
         <Flex style={{ marginBottom: "40px" }} $gap={24}>
           <Filter
             activeFilters={[select3, select4]}

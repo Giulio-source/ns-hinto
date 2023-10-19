@@ -1,13 +1,12 @@
-import { Button } from "../commons/UI/Button";
 import { Section } from "../commons/Section";
 import { Flex } from "../commons/Theme";
+import { Button } from "../commons/UI/Button";
 import { ArrowRight } from "../components/Icons/ArrowRight";
 
 export const ShowcaseButtons = () => {
   return (
     <>
-      <Section $defaultPadding>
-        <h1>Showcase: Buttons Light</h1>
+      <Section $defaultPadding title="Light Buttons">
         <h2>Primary buttons</h2>
         <br />
         <Flex $gap={16} $alignItems="center">
@@ -321,8 +320,7 @@ export const ShowcaseButtons = () => {
           />
         </Flex>
       </Section>
-      <Section theme="dark" $defaultPadding>
-        <h1>Showcase: Buttons Dark</h1>
+      <Section theme="dark" $defaultPadding title="Dark Buttons">
         <h2 style={{ color: "white" }}>Primary buttons</h2>
         <br />
         <Flex $gap={16} $alignItems="center">

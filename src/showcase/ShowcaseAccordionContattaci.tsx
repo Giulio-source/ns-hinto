@@ -4,8 +4,7 @@ import { FormContattaci } from "../components/FormContattaci/FormContattaci";
 
 export const ShowcaseAccordionContattaci = () => {
   return (
-    <Section $defaultPadding>
-      <h1>Showcase: Accordion Contattaci</h1>
+    <Section $defaultPadding title="Accordion Contattaci">
       <AccordionContattaci
         label={
           <>

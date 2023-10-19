@@ -25,3 +25,7 @@ export function shuffleArray<T>(array: Array<T>): Array<T> {
   }
   return newArray;
 }
+
+export function onlyUnique<T>(value: T, index: number, array: Array<T>) {
+  return array.indexOf(value) === index;
+}

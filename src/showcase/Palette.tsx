@@ -16,8 +16,7 @@ const StyledPalette = styled.div`
 
 export const ShowcasePalette = () => {
   return (
-    <Section $defaultPadding>
-      <h1>Showcase: Palette</h1>
+    <Section $defaultPadding title="Palette">
       <div
         style={{
           display: "flex",

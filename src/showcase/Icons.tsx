@@ -30,8 +30,7 @@ import { ZoomOut } from "../components/Icons/ZoomOut";
 
 export const ShowcaseIcons = () => {
   return (
-    <Section $defaultPadding>
-      <h1>Showcase: Icons</h1>
+    <Section $defaultPadding title="Icons">
       <Grid style={{ rowGap: "24px" }}>
         <Icon Icon={ArrowRight} />
         <Icon Icon={ArrowLeft} />

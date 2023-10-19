@@ -1,13 +1,6 @@
 import styled from "styled-components";
 import { Section } from "../commons/Section";
-import {
-  Body,
-  Colors,
-  DesktopBR,
-  Grid,
-  Heading,
-  WhiteBlur_CSS,
-} from "../commons/Theme";
+import { Body, Colors, DesktopBR, Grid, WhiteBlur_CSS } from "../commons/Theme";
 import { FormContattaci } from "../components/FormContattaci/FormContattaci";
 
 const StyledColumnLeft = styled.div`
@@ -40,44 +33,27 @@ const StyledColumnRight = styled.div`
   }
 `;
 
-const StyledTitle = styled.div`
-  margin-bottom: 36px;
-
-  @media screen and (min-width: ${DesktopBR}) {
-    margin-bottom: 80px;
-  }
-`;
-
-const StyledSezioneContattaci = styled.div`
-  padding: 120px 0 80px;
-`;
-
 export const SezioneContattaci = () => {
   return (
-    <Section>
-      <StyledSezioneContattaci>
-        <StyledTitle>
-          <Heading size="m">Siamo qui per te</Heading>
-        </StyledTitle>
-        <Grid>
-          <StyledColumnLeft>
-            <Body size="m">
-              Desideri esplorare <strong>nuovi orizzonti</strong> nel mercato
-              digitale? Hai un'idea che desideri trasformare in una{" "}
-              <strong>soluzione vincente?</strong> Necessiti di{" "}
-              <strong>supporto, consulenza o formazione</strong> da parte dei
-              nostri esperti? Vuoi sapere di più su Hinto Group?
-            </Body>
-            <Body size="l">
-              Per tutto questo e molto altro, puoi contare su di noi: scrivici
-              ora.
-            </Body>
-          </StyledColumnLeft>
-          <StyledColumnRight>
-            <FormContattaci />
-          </StyledColumnRight>
-        </Grid>
-      </StyledSezioneContattaci>
+    <Section title="Siamo qui per te" $defaultPadding>
+      <Grid>
+        <StyledColumnLeft>
+          <Body size="m">
+            Desideri esplorare <strong>nuovi orizzonti</strong> nel mercato
+            digitale? Hai un'idea che desideri trasformare in una{" "}
+            <strong>soluzione vincente?</strong> Necessiti di{" "}
+            <strong>supporto, consulenza o formazione</strong> da parte dei
+            nostri esperti? Vuoi sapere di più su Hinto Group?
+          </Body>
+          <Body size="l">
+            Per tutto questo e molto altro, puoi contare su di noi: scrivici
+            ora.
+          </Body>
+        </StyledColumnLeft>
+        <StyledColumnRight>
+          <FormContattaci />
+        </StyledColumnRight>
+      </Grid>
     </Section>
   );
 };
