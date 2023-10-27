@@ -1,3 +1,5 @@
+import gsap from "gsap";
+import MotionPathPlugin from "gsap/dist/MotionPathPlugin";
 import { Pixels } from "./commons/Pixels";
 import { GlobalStyle } from "./commons/Theme";
 import { Header } from "./components/Header/Header";
@@ -12,8 +14,13 @@ import { ShowcaseForm } from "./showcase/ShowcaseForm";
 import { ShowcaseHero } from "./showcase/ShowcaseHero";
 import { ShowcasePeople } from "./showcase/ShowcasePeople";
 import { ShowcaseTypography } from "./showcase/Typography";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    gsap.registerPlugin(MotionPathPlugin);
+  }, []);
+
   return (
     <>
       <GlobalStyle />
